@@ -1,0 +1,543 @@
+% 群论小抄模板
+% 编译方式：XeLaTeX
+
+\documentclass[landscape]{article}
+
+% 中文支持
+\usepackage{ctex}
+
+% 页面设置：A3纸，页边距2mm
+\usepackage[
+    a3paper,
+    landscape,
+    top=2mm,
+    bottom=2mm,
+    left=2mm,
+    right=2mm
+]{geometry}
+
+% 多栏排版
+\usepackage{multicol}
+
+% 删除页眉页脚
+\pagestyle{empty}
+
+% 设置字号为八号（约5pt）
+\renewcommand{\normalsize}{\fontsize{5pt}{8pt}\selectfont}
+
+% 设置行距为固定值8磅
+\setlength{\baselineskip}{8pt}
+\linespread{1}
+
+% 分栏设置：6栏，间隔0.5字符（约2.5pt），加分隔线；关闭均衡分栏
+\setlength{\columnsep}{2.5pt}  % 0.5字符间隔
+\setlength{\columnseprule}{0.4pt}  % 分隔线宽度
+\raggedcolumns  % 逐栏填满后再换栏，避免自动均衡
+
+% 减少段落间距
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parindent}{0pt}
+
+% 紧凑的列表环境
+\usepackage{enumitem}
+\setlist{nosep, leftmargin=*, labelindent=0pt}
+
+% 数学公式支持
+\usepackage{amsmath, amssymb, amsfonts}
+
+% 颜色支持（可选，用于标题高亮）
+\usepackage{xcolor}
+
+% 紧凑的section标题
+\usepackage{titlesec}
+\titleformat{\section}{\bfseries\normalsize}{\thesection.}{0.3em}{}
+\titlespacing{\section}{0pt}{2pt}{1pt}
+\titleformat{\subsection}{\bfseries\small}{\thesubsection.}{0.3em}{}
+\titlespacing{\subsection}{0pt}{1pt}{0.5pt}
+
+%======================================
+% 文档开始
+%======================================
+\begin{document}
+\normalsize
+
+\begin{multicols*}{6}
+
+% ===== 在此处添加你的内容 =====
+\section*{群的定义与基本性质}
+\textbf{群}：给定集合$G$及其上的二元运算（乘法），若满足以下四条，则称$(G,\cdot)$为群：封闭性、结合律、存在单位元、每个元素存在逆元。\\
+\textbf{封闭性}：任取$f,g\in G$，其积$fg$仍属于$G$。\\
+\textbf{结合律}：任取$f,g,h\in G$，先后相乘的结果与加括号方式无关。\\
+\textbf{单位元}：存在且唯一的元素$e\in G$，使任取$f\in G$都有$ef=fe=f$。\\
+\textbf{逆元}：任取$f\in G$，存在且唯一的元素$f^{-1}\in G$，使$f^{-1}f=ff^{-1}=e$。\\
+\textbf{意义}：群论用于刻画与研究对称性。
+
+\section*{群的元素/阶/可交换性}
+\begin{itemize}
+  \item 群元素可以是数，也可以是变换（矩阵）、置换等。
+  \item \textbf{有限群/无限群}：$|G|<\infty$ 为有限群，否则为无限群；\textbf{群的阶}为$|G|$（也记$n(G)$）。
+  \item 有限群的乘法规则常用\textbf{乘法表}描述；无限群常用\textbf{公式}描述。
+  \item \textbf{阿贝尔群（可交换群）}：对任意$f,g\in G$，有$fg=gf$。
+\end{itemize}
+
+\section*{群元素的参数标记}
+群元素可用指标/参数$\alpha$标记为$g_{\alpha}$（$\alpha$可取离散或连续范围；也可由多个参数共同标记）。
+
+\section*{重排定理（Rearrangement）}
+\begin{itemize}
+  \item 对任意固定$u\in G$，左乘集合$uG=\{ug\mid g\in G\}$与$G$相同；右乘集合$Gu=\{gu\mid g\in G\}$与$G$相同。
+  \item 取逆集合$G^{-1}=\{g^{-1}\mid g\in G\}$与$G$相同。
+  \item 等价表述：在乘法表中，每一行/列都是$G$元素的一个排列；每个元素在每一行/列中恰出现一次。
+\end{itemize}
+
+\section*{子群}
+\begin{itemize}
+  \item \textbf{定义}：$H\subseteq G$且在$G$的同一运算下构成群，则称$H$为$G$的子群（记$H\le G$）。
+  \item \textbf{判别（非空子集）}：$H$为子群$\Leftrightarrow$（1）$h_1,h_2\in H\Rightarrow h_1h_2\in H$；（2）$h\in H\Rightarrow h^{-1}\in H$。
+  \item \textbf{平凡子群}：$\{e\}$与$G$；其余称固有子群。
+\end{itemize}
+
+\section*{循环群与元素的阶}
+\begin{itemize}
+  \item 任意元素$a\in G$可生成循环子群$\langle a\rangle=\{a^k\mid k\in\mathbb{Z}\}$。
+  \item 若存在最小正整数$k$使$a^k=e$，则称$a$的\textbf{阶}为$k$，且$\langle a\rangle$为$k$阶循环群（有限情形）。
+  \item 循环群为阿贝尔群。
+\end{itemize}
+
+\section*{陪集}
+\begin{itemize}
+  \item 若$H\le G$，$g\in G$，\textbf{左陪集}$gH=\{gh\mid h\in H\}$；\textbf{右陪集}$Hg=\{hg\mid h\in H\}$。
+  \item 任一陪集的元素数目与子群$H$相等。
+\end{itemize}
+
+\section*{陪集定理与拉格朗日定理}
+\begin{itemize}
+  \item \textbf{陪集定理}：任意两个左陪集要么相同，要么不相交；右陪集同理。
+  \item \textbf{拉格朗日定理}：若$G$为有限群、$H\le G$，则$|H|\mid |G|$，且$|G|=|H|\,[G\!:\!H]$（$[G\!:\!H]$为左陪集个数）。
+  \item \textbf{推论}：若$|G|$为素数，则$G$无非平凡子群（只有$\{e\}$与$G$）。
+  \item \textbf{分割}：有限群$G$可按某子群$H$的左（或右）陪集分割为互不相交子集。
+\end{itemize}
+
+\section*{共轭与共轭类}
+\begin{itemize}
+  \item \textbf{共轭}：$f,h\in G$，若$\exists g\in G$使$gfg^{-1}=h$，则称$h$与$f$共轭，记$h\sim f$。
+  \item \textbf{性质}：自反（$f\sim f$）、对称、传递；故“共轭”是等价关系。
+  \item \textbf{共轭类}：与$ f $共轭的全体元素构成$ f $的共轭类$[f]=\{gfg^{-1}\mid g\in G\}$。
+  \item \textbf{基本事实}：单位元自成一类；阿贝尔群每个元素自成一类；同一共轭类中元素的阶相同。
+  \item \textbf{分割}：不同共轭类互不相交；群可按共轭类分割（各类大小不一定相同）。
+\end{itemize}
+
+\section*{中心化子与类方程局部结论}
+\begin{itemize}
+  \item \textbf{中心化子（对易子群）}：$C_G(g)=\{h\in G\mid hg=gh\}=\{h\in G\mid hgh^{-1}=g\}$，且$C_G(g)\le G$。
+  \item \textbf{共轭类大小}：若$G$有限，则$|[g]|=[G:C_G(g)]=\dfrac{|G|}{|C_G(g)|}$。
+  \item \textbf{定理1.4}：有限群中任一共轭类的元素个数是群阶的因子（即$|[g]|\mid |G|$）。
+\end{itemize}
+
+\section*{共轭子群}
+\begin{itemize}
+  \item \textbf{定义}：$H,K\le G$，若$\exists g\in G$使$K=gHg^{-1}=\{ghg^{-1}\mid h\in H\}$，则称$H$与$K$共轭。
+  \item \textbf{性质}：对称、传递（因此子群可按共轭关系分成共轭子群类）。
+\end{itemize}
+
+\section*{不变子群（正规子群）}
+\begin{itemize}
+  \item \textbf{定义}：$H\le G$，若$\forall g\in G$有$gHg^{-1}=H$，则称$H$为$G$的不变子群（正规子群），记$H\trianglelefteq G$。
+  \item \textbf{等价表述}：$\forall g\in G,\forall h\in H$，有$ghg^{-1}\in H$（即$H$包含其任一元素的整个共轭类）。
+  \item \textbf{阿贝尔群}：若$G$为阿贝尔群，则$G$的任意子群都是不变子群。
+  \item \textbf{定理1.5（共轭重排）}：若$H\trianglelefteq G$且$f\in G$固定，则映射$h\mapsto fhf^{-1}$是$H\to H$的双射（在$h$取遍$H$时，$fhf^{-1}$恰给出$H$全部元素一次）。
+\end{itemize}
+
+\section*{不变子群的陪集与商群}
+\begin{itemize}
+  \item 若$H\trianglelefteq G$，则$\forall g\in G$有\textbf{左右陪集重合}：$gH=Hg$（因此不再区分左/右陪集）。
+  \item \textbf{陪集乘法}：$(g_iH)(g_jH)=g_ig_jH$（良定义依赖$H\trianglelefteq G$）。
+  \item \textbf{商群}：以陪集集合$G/H=\{gH\mid g\in G\}$为元素、以上述陪集乘法为运算，则$G/H$构成群，称为$H$的商群。
+\end{itemize}
+
+\section*{同构（Isomorphism）}
+\begin{itemize}
+  \item \textbf{定义1.10}：若存在双射$\Phi:G\to F$满足$\Phi(g_ig_j)=\Phi(g_i)\Phi(g_j)$，则称$G$与$F$同构，记$G\cong F$；$\Phi$称同构映射。
+  \item \textbf{保结构}：同构映射将单位元映到单位元，将逆元映到逆元：$\Phi(e_G)=e_F$，$\Phi(g^{-1})=\Phi(g)^{-1}$。
+  \item \textbf{逆映射}：若$\Phi$为同构，则$\Phi^{-1}$存在且也是同构；因此$G\cong F\Rightarrow F\cong G$。
+  \item \textbf{观点}：同构的两个群可视为“同一群的不同表示”（群结构相同）。
+\end{itemize}
+
+\section*{同态（Homomorphism）}
+\begin{itemize}
+  \item \textbf{定义1.11}：映射$\Phi:G\to F$若保持乘法：$\Phi(g_ig_j)=\Phi(g_i)\Phi(g_j)$，则称$G$到$F$的同态（若$\Phi$为满射，也常称满同态）。
+  \item \textbf{可放宽}：亦可不要求$\Phi$满射；若不特别说明，可按需要区分“同态/满同态”。
+  \item \textbf{关系}：同构是特殊同态（同态$\Phi$若为双射$\Leftrightarrow$同构）。
+  \item \textbf{基本性质}：$\Phi(e_G)=e_F$，$\Phi(g^{-1})=\Phi(g)^{-1}$。
+  \item \textbf{一般性}：同态可多对一；$G$同态到$F$不必推出$F$同态到$G$。
+  \item \textbf{显然同态}：任意群$G$到平凡群$Z_1=\{e\}$存在同态（通常略去）。
+\end{itemize}
+
+\section*{同态核与第一同构定理}
+\begin{itemize}
+  \item \textbf{同态核（定义1.12）}：$\ker\Phi=\{g\in G\mid \Phi(g)=e_F\}$。
+  \item \textbf{性质}：$\ker\Phi\le G$且$\ker\Phi\trianglelefteq G$（同态核是不变子群）。
+  \item \textbf{定理1.6（同态核定理/第一同构定理）}：$G/\ker\Phi\cong \mathrm{Im}(\Phi)$；若$\Phi$为满射，则$G/\ker\Phi\cong F$。
+\end{itemize}
+
+\section*{共轭子群与同构}
+若$H,K\le G$且$K=gHg^{-1}$，则$H\cong K$（同构可取$\varphi:H\to K,\ \varphi(h)=ghg^{-1}$）。
+
+\section*{自同构与自同构群}
+\begin{itemize}
+  \item \textbf{自同构（定义1.13）}：群$G$到自身的同构$\nu:G\to G$称为$G$的自同构。
+  \item \textbf{自同构群}：所有自同构在复合运算下构成群，记$\operatorname{Aut}(G)$。
+\end{itemize}
+
+\section*{内自同构与内自同构群}
+\begin{itemize}
+  \item \textbf{内自同构}：由$u\in G$诱导的共轭映射$\mu_u(g)=ugu^{-1}$称为内自同构。
+  \item \textbf{内自同构群}：全体内自同构构成群$\operatorname{Inn}(G)$，且$\operatorname{Inn}(G)\trianglelefteq \operatorname{Aut}(G)$。
+\end{itemize}
+
+\section*{群的中心}
+\begin{itemize}
+  \item \textbf{中心}：$Z(G)=\{z\in G\mid \forall g\in G,\ zg=gz\}$；若$G$为阿贝尔群，则$Z(G)=G$。
+  \item \textbf{性质}：$Z(G)\trianglelefteq G$。
+  \item \textbf{结论}：$G/Z(G)\cong \operatorname{Inn}(G)$。
+\end{itemize}
+
+\section*{内自同构诱导同态与外自同构群}
+\begin{itemize}
+  \item \textbf{诱导同态}：定义$\operatorname{inn}:G\to \operatorname{Inn}(G)$，$g\mapsto \mu_g(\cdot)=g(\cdot)g^{-1}$；则$\operatorname{inn}$为群同态。
+  \item \textbf{核}：$\ker(\operatorname{inn})=Z(G)$；由同态核定理得$G/Z(G)\cong \operatorname{Inn}(G)$。
+  \item \textbf{外自同构}：不是内自同构的自同构称为外自同构（outer automorphism）。
+  \item \textbf{外自同构群}：$\operatorname{Out}(G)\equiv \operatorname{Aut}(G)/\operatorname{Inn}(G)$（因$\operatorname{Inn}(G)\trianglelefteq \operatorname{Aut}(G)$）。
+\end{itemize}
+
+\section*{变换群（置换群）}
+\begin{itemize}
+  \item \textbf{变换/置换}：非空集合$X$到自身的一一对应（双射）$f:X\to X$。
+  \item \textbf{置换乘法（定义1.15）}：对$X$上的置换$f,g$，定义$fg$为先做$g$后做$f$，即$fg(x)=f(g(x))$。
+  \item \textbf{完全对称群}：$X$上全体置换在上述乘法下成群，记为$S_X$；单位元为恒等置换$e$，逆元为逆置换$f^{-1}$。
+  \item 若$|X|=n$，则$S_X$记为$S_n$，且$|S_n|=n!$。
+  \item $S_X$的任意子群称为$X$上的\textbf{变换群/置换群/对称群}。
+\end{itemize}
+
+\section*{凯莱定理（Cayley）}
+\begin{itemize}
+  \item \textbf{定理1.7}：任意群$G$同构于$S_G$（以$G$为底集合的完全对称群）的一个子群；特别地，若$|G|=n$，则$G$同构于$S_n$的一个子群。
+\end{itemize}
+
+\section*{群作用下的等价、轨道与不变子集}
+\begin{itemize}
+  \item 设$G$为$X$的变换群。定义$X$上关系：$x\sim y \iff \exists g\in G,\ gx=y$；则$\sim$具对称性与传递性（通常也视为等价关系）。
+  \item \textbf{轨道}：含$x$的$G$轨道为$\mathcal{O}_G(x)=\{gx\mid g\in G\}$（即与$x$等价的全体点）。
+  \item \textbf{迷向子群/稳定子群（定义1.16）}：$G_x=\{h\in G\mid hx=x\}$，是$G$的子群（使$x$不动的全部变换）。
+  \item \textbf{定理1.8（轨道--陪集对应）}：含$x$的轨道上的点与$G_x$的左陪集一一对应；等价地，映射$gG_x\mapsto gx$给出双射$G/G_x \cong \mathcal{O}_G(x)$。
+  \item \textbf{推论（有限情形）}：若$|G|=n$且$|G_x|=n(G_x)$，则$|\mathcal{O}_G(x)|=[G:G_x]=\dfrac{n}{n(G_x)}$。
+  \item \textbf{$G$不变子集}：$Y\subseteq X$称$G$不变，若$\forall y\in Y,\forall g\in G,\ g(y)\in Y$；每个轨道都是$G$不变的，轨道的并也是$G$不变的。
+  \item \textbf{子集的稳定子群}：对任意$Y\subseteq X$，可取$H=\{g\in G\mid g(Y)=Y\}$，则$H\le G$且$Y$对$H$不变（至少平凡子群$\{e\}$总可使$Y$不变）。
+\end{itemize}
+
+\section*{直积群（Direct Product）}
+\begin{itemize}
+  \item 设$G_1,G_2$为群。直积群$G=G_1\otimes G_2$的元素可写为$g_{\alpha\beta}=g_{1\alpha}g_{2\beta}$，其中$g_{1\alpha}\in G_1,\,g_{2\beta}\in G_2$，且视作可交换：$g_{1\alpha}g_{2\beta}=g_{2\beta}g_{1\alpha}$。
+  \item \textbf{乘法}：$g_{\alpha\beta}g_{\alpha'\beta'}=(g_{1\alpha}g_{1\alpha'})(g_{2\beta}g_{2\beta'})$（即两分量分别相乘再组合）。
+  \item \textbf{单位元/逆元}：$e=e_1e_2$；$(g_{1}g_{2})^{-1}=g_1^{-1}g_2^{-1}$。
+  \item \textbf{判别}：若群$G$有子群$G_1,G_2$满足（i）任意$g\in G$可唯一表示为$g=g_1g_2$（$g_i\in G_i$）；（ii）$g_1g_2=g_2g_1$（$\forall g_1\in G_1,g_2\in G_2$），则$G$是$G_1$与$G_2$的直积：$G=G_1\otimes G_2$。
+  \item \textbf{性质}：若$G=G_1\otimes G_2$，则$G_1\cap G_2=\{e\}$，且$G_1\trianglelefteq G,\ G_2\trianglelefteq G$。
+  \item \textbf{商群}：$(G_1\otimes G_2)/G_1\cong G_2,\quad (G_1\otimes G_2)/G_2\cong G_1$。
+\end{itemize}
+
+\section*{半直积群（Semidirect Product）}
+\begin{itemize}
+  \item 给定群$G_1,G_2$及同态$\Phi:G_2\to \operatorname{Aut}(G_1)$（记$\Phi(g_2)=\varphi_{g_2}$）。
+  \item \textbf{元素表示}：$G=G_1\rtimes_\Phi G_2$的元素可唯一写为$(g_1,g_2)$（或有序乘积$g_1g_2$）。
+  \item \textbf{乘法}：$(g_1,g_2)(g_1',g_2')=(g_1\,\varphi_{g_2}(g_1'),\ g_2g_2')$。
+  \item \textbf{单位元}：$(e_1,e_2)$。
+  \item \textbf{逆元}：$(g_1,g_2)^{-1}=\big(\varphi_{g_2^{-1}}(g_1^{-1}),\ g_2^{-1}\big)$。
+  \item \textbf{结构特点}：一般不要求$g_1g_2=g_2g_1$；通常有$G_1\trianglelefteq G$，而$G_2$未必正规。
+  \item \textbf{顺序不可交换}：一般$G_1\rtimes G_2 \not\cong G_2\rtimes G_1$（构造依赖作用$\Phi$）。
+  \item \textbf{退化为直积}：若$\Phi$为平凡作用（$\forall g_2,\ \varphi_{g_2}=\mathrm{id}$），则$G_1\rtimes_\Phi G_2 \cong G_1\otimes G_2$（此时两分量可交换）。
+  \item \textbf{判别（课件式表述）}：$G$为$G_1$与$G_2$的半直积$\Rightarrow$ $G_1\trianglelefteq G$，$G_1\cap G_2=\{e\}$，且每个$g\in G$可（通常唯一地）写为$g=g_1g_2$（$g_i\in G_i$）。
+  \item \textbf{重要观点}：若$H\trianglelefteq G$，则常把$G$看成$H$与$G/H$的半直积：$G\cong H\rtimes (G/H)$（需选取截面/作用来具体化）。
+\end{itemize}
+
+\section*{线性空间（向量空间）}
+\begin{itemize}
+  \item \textbf{定义2.1}：数域$K$上的向量空间$V$在加法与数乘下满足：加法交换/结合、零元$0$、加法逆元$-x$；数乘单位$1\cdot x=x$、结合律$(ab)x=a(bx)$、分配律$a(x+y)=ax+ay$、$(a+b)x=ax+bx$。
+  \item 视加法为“群乘法”，则$(V,+)$是阿贝尔群。
+\end{itemize}
+
+\section*{线性变换}
+\begin{itemize}
+  \item \textbf{定义2.2}：线性变换$A:V\to V$满足$A(ax+y)=aA(x)+A(y)$（$a\in K$）。
+  \item 线性变换可定义数乘、加法与复合乘法：$(aA)(x)=aA(x)$，$(A+B)(x)=A(x)+B(x)$，$(AB)(x)=A(B(x))$。
+  \item 若$A$为双射，则存在逆线性变换$A^{-1}$。
+  \item \textbf{有限维}：$V$至多$n$个线性无关向量$\Rightarrow$ $V$为$n$维；可取基$(e_1,\dots,e_n)$，任意$x=\sum_i x_i e_i$（坐标列向量）。
+  \item \textbf{矩阵表示}：线性变换在基下由$n\times n$矩阵表示；行列式$\neq 0$时为非奇异（可逆）变换。
+\end{itemize}
+
+\section*{一般线性群}
+\begin{itemize}
+  \item \textbf{$GL(n,\mathbb{C})$}：全体$n\times n$复矩阵中行列式非零者在矩阵乘法下构成群。
+  \item \textbf{定义2.3}：$n$维复向量空间$V$上全体非奇异线性变换在复合下构成群，称为$GL(V,\mathbb{C})$（与$GL(n,\mathbb{C})$同构）；单位元为恒等变换（单位矩阵），逆元为逆变换（逆矩阵）。
+\end{itemize}
+
+\section*{群表示}
+\begin{itemize}
+  \item \textbf{定义2.4（线性表示）}：群$G$到线性变换群$L(V,\mathbb{C})$的同态$A:G\to L(V,\mathbb{C})$称为$G$在$V$上的（复）线性表示；$\dim V=n$称为$n$维表示。等价地（选定基后）$A:G\to GL(n,\mathbb{C})$为同态。
+  \item \textbf{保单位元/逆元}：$A(e)=I$，$A(g^{-1})=A(g)^{-1}$。
+  \item \textbf{为何要求非奇异}：若某$g$映为奇异矩阵（$\det=0$），由同态与重排定理将迫使所有$A(h)$奇异，与$A(e)=I$矛盾；故表示矩阵应可逆。
+  \item \textbf{定义2.5（忠实表示）}：若$A$为同构（等价于$\ker A=\{e\}$），则称$A$为忠实表示。
+  \item \textbf{平凡表示}：$1$维表示$A(g)=1$（或$A(g)=I_{1\times1}$）对任意$g\in G$。
+\end{itemize}
+
+\section*{由群作用诱导的表示（函数空间）}
+\begin{itemize}
+  \item 若$G$作用在空间$X$上，则可在函数空间上定义表示（拉回）：$(A(g)\psi)(x)=\psi(g^{-1}x)$。
+  \item 该定义满足同态性：$A(g_1g_2)=A(g_1)A(g_2)$（从而给出$G$的一种表示构造方法）。
+\end{itemize}
+
+\section*{一维表示与可约性（概念）}
+\begin{itemize}
+  \item \textbf{一维表示}：本质上是群同态$A:G\to \mathbb{C}^{\times}$（把群元映到可逆标量）。
+  \item \textbf{可约表示（直和分解）}：若表示空间可分解为非平凡$G$不变子空间的直和，则称表示可约；否则不可约。
+\end{itemize}
+
+\section*{由已知表示构造高维表示（多项式/张量观点）}
+\begin{itemize}
+  \item 已知$G$在$V$上的表示$A$后，可在$V$的多项式函数空间（如二次齐次多项式所张成的空间）上用拉回$(A(g)\phi)(v)=\phi(A(g)^{-1}v)$得到更高维表示。
+  \item 这类构造常产生可约表示，进而可分解为直和（如写作$V\simeq V_1\oplus V_2$，对应表示$A\simeq A_1\oplus A_2$）。
+\end{itemize}
+
+\section*{从不变子空间读出表示矩阵}
+\begin{itemize}
+  \item 若$W$是表示空间中一个$G$不变子空间，取基$(\psi_1,\dots,\psi_m)$，则对任意$g\in G$有展开
+  \[
+  A(g)\psi_i=\sum_{j=1}^m \psi_j\,A_{ji}(g),
+  \]
+  从而得到矩阵表示$A(g)=(A_{ji}(g))\in GL(m,\mathbb{C})$。
+  \item 同态性对应矩阵乘法：$A(g_1g_2)=A(g_1)A(g_2)$。
+\end{itemize}
+
+\section*{等价表示（相似变换）}
+\begin{itemize}
+  \item \textbf{定义2.6}：若$A$是$G$在$V$上的表示，$X$为可逆线性变换，则
+  \[
+  A'(g)=XA(g)X^{-1}
+  \]
+  也是表示，称$A'$与$A$等价（equivalent）。
+  \item 等价表示维数相同；维数相同的表示未必等价。
+  \item 相似变换本质是更换表示空间的基。
+\end{itemize}
+
+\section*{可约/完全可约/不可约表示}
+\begin{itemize}
+  \item \textbf{定义2.7（可约）}：表示$A$在$V$上若存在$G$不变的真子空间$W$（$0\neq W\neq V$），则$A$可约；否则不可约。
+  \item \textbf{矩阵判别（可约）}：$A$可约$\Leftrightarrow$存在等价表示使全部$A(g)$在同一基下呈共同的块上（三）角形式
+  \[
+  A(g)=\begin{pmatrix} C(g)&N(g)\\ 0&B(g)\end{pmatrix}.
+  \]
+  \item \textbf{直和}：$V=W\oplus W'$指$V=W+W'$且$W\cap W'=\{0\}$；任意$x\in V$可唯一写为$x=y+z$（$y\in W,z\in W'$）。
+  \item \textbf{定义2.8（完全可约）}：若$V=W\oplus W'$且$W,W'$均为$G$不变子空间，则$A$完全可约（是可约的特殊情形）。
+  \item \textbf{矩阵判别（完全可约）}：存在等价表示使全部$A(g)$共同块对角化
+  \[
+  A(g)=C(g)\oplus B(g)=\begin{pmatrix} C(g)&0\\ 0&B(g)\end{pmatrix},
+  \]
+  即表示可写为直和（可包含重数）。
+  \item \textbf{定义2.9（不可约）}：表示空间不存在$G$不变的真子空间。
+  \item \textbf{直接推论}：若$A$不可约，则不存在等价表示使\emph{所有} $A(g)$共同化为块上三角或块对角形式（否则将给出不变真子空间）。
+\end{itemize}
+
+\section*{内积空间与正交}
+\begin{itemize}
+  \item \textbf{内积}：在数域$K$上的线性空间$V$中，映射$\langle x|y\rangle\in K$满足共轭对称$\langle x|y\rangle=\langle y|x\rangle^{*}$、对第二个变量线性、正定$\langle x|x\rangle>0$（$x\neq0$），则称为内积。
+  \item \textbf{长度/正交}：$|x|=\sqrt{\langle x|x\rangle}$；若$\langle x|y\rangle=0$则$x\perp y$。
+  \item \textbf{正交归一基}：可取基$\{e_i\}$使$\langle e_i|e_j\rangle=\delta_{ij}$。
+\end{itemize}
+
+\section*{幺正变换与幺正表示}
+\begin{itemize}
+  \item \textbf{定义2.10（幺正变换）}：内积空间$V$上线性变换$U$若保持内积$(Ux|Uy)=(x|y)$，则$U$为幺正变换。
+  \item \textbf{性质}：$U^{+}U=UU^{+}=I$，故$U^{+}=U^{-1}$（矩阵形式：$U^{*t}U=I$）。
+  \item \textbf{定义2.11（幺正/酉表示）}：若表示$A:G\to GL(V)$的每个$A(g)$都是幺正变换，则称$A$为$G$的幺正表示；并有$A(g)^{+}=A(g)^{-1}=A(g^{-1})$。
+\end{itemize}
+
+\section*{幺正表示的完全可约性}
+\begin{itemize}
+  \item \textbf{公式(2.14)}：在正交归一基下，幺正表示矩阵满足$A(g)^{*t}=A(g)^{-1}=A(g^{-1})$（分量式：$A(g)_{ji}^{*}=[A(g)^{-1}]_{ij}=A(g^{-1})_{ij}$）。
+  \item \textbf{定理2.1}：若幺正表示可约，则必完全可约（可用不变子空间$W$与其正交补$W^{\perp}$分解：$V=W\oplus W^{\perp}$）。
+  \item \textbf{推论}：有限维幺正表示可分解为不可约幺正表示的直和（可带重数）：$A=\bigoplus_{p} m_p A^{p}$。
+\end{itemize}
+
+\section*{线性代数与结合代数}
+\begin{itemize}
+  \item \textbf{定义2.12}：数域$K$上线性空间$R$若定义了乘法，并对$x,y,z\in R,a\in K$满足：封闭$xy\in R$；分配律$x(y+z)=xy+xz,(x+y)z=xz+yz$；数乘可提出$a(xy)=(ax)y=x(ay)$，则称$R$为（线性）代数。
+  \item 若还满足结合律$(xy)z=x(yz)$，则称为\textbf{结合代数}。
+\end{itemize}
+
+\section*{群空间与群代数}
+\begin{itemize}
+  \item \textbf{群空间（定义2.13）}：取复数域$\mathbb{C}$与群$G=\{g_\alpha\}$，令
+  \[
+  V_G=\left\{x=\sum_{\alpha} x_{\alpha}g_{\alpha}\mid x_\alpha\in\mathbb{C}\right\},
+  \]
+  并定义$(x+y)=\sum_\alpha(x_\alpha+y_\alpha)g_\alpha,\ a x=\sum_\alpha(ax_\alpha)g_\alpha$，则$V_G$为线性空间，$\{g_\alpha\}$为自然基。
+  \item \textbf{群代数（定义2.14）}：若$g_\alpha g_\beta=g_\gamma$，则对$x=\sum_\alpha x_\alpha g_\alpha,\ y=\sum_\beta y_\beta g_\beta$定义乘法
+  \[
+  xy=\sum_{\alpha,\beta} x_\alpha y_\beta (g_\alpha g_\beta)\in V_G,
+  \]
+  该乘法与加法/数乘满足分配与结合，从而$V_G$成为$G$的结合代数（群代数）。
+\end{itemize}
+
+\section*{正则表示（Regular Representation）}
+\begin{itemize}
+  \item 以群代数$V_G$为表示空间。
+  \item \textbf{左正则表示}：对$g\in G$定义线性变换$L(g)$满足$L(g)\,g_\alpha=gg_\alpha$（再线性延拓到$V_G$）；则$L(g_1g_2)=L(g_1)L(g_2)$，给出$G$的表示；若$|G|=n$则为$n$维表示。
+  \item \textbf{忠实性}：由重排定理，$g_1\neq g_2\Rightarrow L(g_1)\neq L(g_2)$，故左正则表示忠实。
+  \item \textbf{右正则表示}：定义$R(g)\,g_\alpha=g_\alpha g^{-1}$（线性延拓），同样满足$R(g_1g_2)=R(g_1)R(g_2)$，亦为$G$的表示。
+  \item \textbf{矩阵形态（有限群）}：在自然基$\{g_\alpha\}$下，$L(g)$（或$R(g)$）对应的矩阵是置换矩阵：元素只取$0/1$，且每行每列恰有一个$1$（其余为$0$）。
+  \item \textbf{约化（概念）}：正则表示一般是可约的；可通过相似变换将所有$L(g)$共同化为块对角形式，即分解为若干表示的直和。
+\end{itemize}
+
+\section*{有限群表示的幺正化}
+\begin{itemize}
+  \item \textbf{定理（有限群表示等价于幺正表示）}：若$G$为有限群，$A$为$G$在有限维内积空间$V$上的表示，则存在等价表示$A'(g)=X A(g) X^{-1}$使$A'$为幺正表示。
+  \item \textbf{方法（平均内积）}：在原内积$(\cdot|\cdot)$下定义新内积
+  \[
+  \langle x|y\rangle=\frac{1}{|G|}\sum_{g\in G} (A(g)x\,|\,A(g)y),
+  \]
+  则$A(g)$在$\langle\cdot|\cdot\rangle$下成为幺正变换。
+  \item \textbf{推论}：有限群在内积空间的表示若可约则必完全可约（因其等价幺正化后用定理2.1）。
+\end{itemize}
+
+\section*{Schur 引理（一）}
+\begin{itemize}
+  \item 设$A,B$分别为群$G$的$n_A$维、$n_B$维不可约表示。若存在矩阵$M$满足
+  \[
+  A(g)M=MB(g)\quad (\forall g\in G),
+  \]
+  则：（i）若$A,B$不等价，则$M=0$；（ii）若$M\neq0$，则$A,B$等价。
+  \item \textbf{推论}：若$M\neq0$，则$M$为同构（可逆），且$n_A=n_B$。
+\end{itemize}
+
+\section*{Schur 引理（二）}
+\begin{itemize}
+  \item 设$A$为群$G$的有限维\textbf{不可约复表示}。若矩阵$M$与所有$A(g)$对易：
+  \[
+  A(g)M=MA(g)\quad (\forall g\in G),
+  \]
+  则$M=\lambda I$（$\lambda\in\mathbb{C}$）。
+  \item \textbf{备注}：该结论依赖“复表示/代数闭域”；对\textbf{实}不可约表示不一定成立。
+\end{itemize}
+
+\section*{群函数}
+\begin{itemize}
+  \item \textbf{对应}：群代数（群空间）$V_G$中向量$x=\sum_i x_i g_i$可视为群函数$x(g_i)\equiv x_i$；反之给定函数值$x(g_i)$即可确定$x=\sum_i x(g_i)g_i$。
+  \item \textbf{数乘/加法}：$(ax)(g_i)=a\,x(g_i)$；$(x+y)(g_i)=x(g_i)+y(g_i)$。
+  \item \textbf{乘法（卷积型）}：
+  \[
+  (xy)(g_i)=\sum_j x(g_j)\,y(g_j^{-1}g_i).
+  \]
+  \item \textbf{一组基函数}：可取$n=|G|$个函数$g_i(\,g_j\,)=\delta_{ij}$作为群函数空间的基（对应群代数的自然基$g_i$）。
+\end{itemize}
+
+\section*{群函数的内积与正则表示}
+\begin{itemize}
+  \item 设$G=\{g_i\}$为$n$阶有限群。定义群函数内积
+  \[
+  \langle x|y\rangle=\frac{1}{n}\sum_{i=1}^{n} x(g_i)^{*}\,y(g_i).
+  \]
+  \item 特别地，对$\delta$基函数有$\langle g_i|g_j\rangle=\frac{1}{n}\delta_{ij}$。
+  \item 在该内积下，左正则表示$L(g)$为幺正：$\langle L(g)x|L(g)y\rangle=\langle x|y\rangle$。
+  \item 若$A^{(r)}$为$n_r$维表示，则其矩阵元函数$A^{(r)}_{\mu\nu}(g_i)$（$\mu,\nu=1,\dots,n_r$）都是群函数；共$n_r^2$个。
+\end{itemize}
+
+\section*{正交性定理（矩阵元）}
+\begin{itemize}
+  \item 设$\{A^{(p)}\}$为有限群$G$的一组不等价不可约（幺正）表示，维数为$n_p$，则
+  \[
+  \sum_{i=1}^{n}\left[A^{(p)}_{\mu\nu}(g_i)\right]^{*}A^{(r)}_{\mu'\nu'}(g_i)
+  =\frac{n}{n_p}\,\delta_{pr}\delta_{\mu\mu'}\delta_{\nu\nu'}.
+  \]
+  \item 等价写法（用上面的内积）：$\langle A^{(p)}_{\mu\nu}\,|\,A^{(r)}_{\mu'\nu'}\rangle=\frac{1}{n_p}\delta_{pr}\delta_{\mu\mu'}\delta_{\nu\nu'}$。
+\end{itemize}
+
+\section*{完备性与正则表示约化}
+\begin{itemize}
+  \item \textbf{完备性定理}：有限群$G$的全部不等价不可约（幺正）表示的矩阵元群函数$A^{(r)}_{\mu\nu}(g_i)$在群函数空间中构成完备系；任意群函数可关于它们展开。
+  \item \textbf{推论1（Burnside）}：设不等价不可约表示维数为$n_r$，则
+  \[
+  \sum_r n_r^{2}=|G|.
+  \]
+  \item \textbf{推论2（正则表示的约化）}：正则表示可完全约化为所有不等价不可约表示的直和，且每个不可约表示出现次数等于其维数：
+  \[
+  \mathrm{Reg}\ \cong\ \bigoplus_{r} n_r\,A^{(r)}.
+  \]
+\end{itemize}
+
+\section*{特征标（Character）}
+\begin{itemize}
+  \item \textbf{定义}：表示$A$的特征标（character）为$\chi^{(A)}(g)\equiv \mathrm{tr}\,A(g)$，是一个群函数。
+  \item \textbf{等价不变}：若$A'(g)=X A(g)X^{-1}$，则$\chi^{(A')}(g)=\chi^{(A)}(g)$。
+  \item \textbf{类函数}：若$h=gfg^{-1}$与$f$共轭，则$\chi^{(A)}(h)=\chi^{(A)}(f)$（同一共轭类取值相同）。
+\end{itemize}
+
+\section*{特征标的第一正交关系}
+\begin{itemize}
+  \item 设$G$为$n$阶有限群，$\{\chi^{(r)}\}$为不等价不可约表示的特征标，则
+  \[
+  \left\langle \chi^{(p)}\mid \chi^{(r)} \right\rangle
+  \equiv \frac{1}{n}\sum_{g\in G}\big(\chi^{(p)}(g)\big)^{*}\chi^{(r)}(g)=\delta_{pr}.
+  \]
+  \item 按共轭类求和：若$G$有共轭类$K_i$，大小$|K_i|=n_i$，则
+  \[
+  \frac{1}{n}\sum_{i} n_i\,\big(\chi^{(p)}(K_i)\big)^{*}\chi^{(r)}(K_i)=\delta_{pr}.
+  \]
+  \item 特别地，$\langle\chi^{(r)}|\chi^{(r)}\rangle=1$（不可约特征标的“范数”）。
+\end{itemize}
+
+\section*{用特征标判断可约性与重数}
+\begin{itemize}
+  \item 若表示$A$完全可约分解为$A\simeq \bigoplus_{p} m_p A^{(p)}$，则
+  \[
+  m_p=\left\langle \chi^{(p)}\mid \chi^{(A)} \right\rangle.
+  \]
+  \item \textbf{判别}：$\langle\chi^{(A)}|\chi^{(A)}\rangle=\sum_p m_p^2$；因此
+  \[
+  \langle\chi^{(A)}|\chi^{(A)}\rangle=1 \Rightarrow A\ \text{不可约},\qquad
+  \langle\chi^{(A)}|\chi^{(A)}\rangle>1 \Rightarrow A\ \text{可约}.
+  \]
+\end{itemize}
+
+\section*{类函数与特征标完备性}
+\begin{itemize}
+  \item \textbf{类函数}：群函数$f$若对任意共轭$h=gfg^{-1}$满足$f(h)=f(f)$，则称$f$为类函数；全体类函数构成群函数空间的子空间。
+  \item \textbf{线性独立}：有限群不等价不可约表示的特征标$\{\chi^{(r)}\}$是线性独立的类函数。
+  \item \textbf{特征标完备性定理}：有限群不等价不可约表示的特征标在类函数空间中完备；任意类函数可展开为$f=\sum_r a^{(r)}\chi^{(r)}$。
+  \item \textbf{推论}：有限群不等价不可约表示的个数$=$共轭类个数。
+\end{itemize}
+
+\section*{特征标的第二正交关系}
+\begin{itemize}
+  \item 设$G$为$n$阶有限群，有共轭类$K_i$（大小$|K_i|=n_i$），则
+  \[
+  \sum_{r}\big(\chi^{(r)}(K_i)\big)^{*}\chi^{(r)}(K_j)=\frac{n}{n_i}\,\delta_{ij}.
+  \]
+\end{itemize}
+
+\section*{特征标表（Character Table）}
+\begin{itemize}
+  \item 将有限群$G$的全部不等价不可约表示的特征标$\chi^{(r)}$按\textbf{行}排列、共轭类$K_i$按\textbf{列}排列，得到的表称为$G$的特征标表。
+  \item \textbf{第一行}通常为一维恒等表示，整行全为$1$；\textbf{第一列}对应单位元类$\{e\}$，其值为表示维数：$\chi^{(r)}(e)=d_r$。
+  \item 行/列正交：行满足第一正交关系，列满足第二正交关系（对应“行正交/列正交”）。
+\end{itemize}
+
+\section*{阿贝尔群的不可约表示}
+\begin{itemize}
+  \item 阿贝尔群每个元素自成共轭类，故不等价不可约表示数$=|G|$。
+  \item 由$\sum_r d_r^2=|G|$可知阿贝尔群的全部不可约表示均为$1$维（$d_r=1$）。
+\end{itemize}
+
+\end{multicols*}
+
+\end{document}
+
