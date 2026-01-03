@@ -1232,6 +1232,288 @@ $T_1=$ \tiny\begin{ytableau}1&2\\3\\4\end{ytableau}, $T_2=$ \tiny\begin{ytableau
       \item 正四面体 $\longleftrightarrow$ 正四面体（自对偶）
   \end{itemize}
 \end{itemize}
+
+\noindent\textcolor{red}{\rule{\linewidth}{1pt}}
+\section*{李群（Lie group）}
+\begin{itemize}
+  \item \textbf{定义}：$G$既是群又是光滑流形，且乘法、取逆为光滑映射。
+  \item \textbf{维度}：$n=\dim G$；可用坐标写$g(x_1,\dots,x_n)$；乘法坐标满足$g(z(x,y))=g(x)g(y)$（$z$光滑）。
+  \item \textbf{紧性}：群流形紧致$\Rightarrow$紧李群。
+\end{itemize}
+
+\section*{$SU(2)$ 的定义与基本性质}
+\begin{itemize}
+  \item \textbf{定义}：$SU(2)=\{U\in M_{2}(\mathbb{C})\mid UU^{\dagger}=\mathbf{1},\ \det U=1\}$，且$UU^{\dagger}=\mathbf{1}\Rightarrow U^{\dagger}=U^{-1}$。
+  \item \textbf{参数化}：$U=\begin{pmatrix} a & b \\ -\bar b & \bar a \end{pmatrix}$，并满足$|a|^2+|b|^2=1$（$a,b\in\mathbb{C}$）。
+  \item \textbf{拓扑/维度}：取$a=x_4+i x_3,\ b=x_2+i x_1$，则$x_1^2+x_2^2+x_3^2+x_4^2=1$（故$SU(2)\simeq S^3$），且$\dim SU(2)=3$。
+  \item \textbf{约束式}：$|u_{11}|^2+|u_{12}|^2=1$。
+\end{itemize}
+
+\section*{$SU(2)$ 的几何参数与指数表示}
+\begin{itemize}
+  \item \textbf{$S^3\subset\mathbb{R}^4$ 球坐标}：$x_1=\sin\frac{\omega}{2}\sin\theta\cos\varphi,\ x_2=\sin\frac{\omega}{2}\sin\theta\sin\varphi,\ x_3=\sin\frac{\omega}{2}\cos\theta,\ x_4=\cos\frac{\omega}{2}$；其中$\omega\in[0,2\pi],\theta\in[0,\pi],\varphi\in[0,2\pi]$。
+  \item \textbf{单位向量}：$\vec n(\theta,\varphi)=(\sin\theta\cos\varphi,\ \sin\theta\sin\varphi,\ \cos\theta)$，并有$x_{1,2,3}=\sin\frac{\omega}{2}\,n_{1,2,3},\ x_4=\cos\frac{\omega}{2}$。
+  \item \textbf{“端点”对应}：$\omega=0\Rightarrow U=\mathbf{1}$，$\omega=2\pi\Rightarrow U=-\mathbf{1}$（边界视同一点的粘合观点）。
+  \item \textbf{乘法恒等式}：$\sigma_i\sigma_j=\delta_{ij}\mathbf{1}+i\epsilon_{ijk}\sigma_k$；等价地$[\sigma_i,\sigma_j]=2i\epsilon_{ijk}\sigma_k,\ \{\sigma_i,\sigma_j\}=2\delta_{ij}\mathbf{1}$，从而$\big[\tfrac12\sigma_i,\tfrac12\sigma_j\big]=i\epsilon_{ijk}\tfrac12\sigma_k$。
+  \item \textbf{向量恒等式}：$(\vec X\cdot\vec\sigma)^2=|\vec X|^2\mathbf{1}$；若$|\vec n|=1$则$(\vec n\cdot\vec\sigma)^{2\ell}=\mathbf{1},\ (\vec n\cdot\vec\sigma)^{2\ell+1}=\vec n\cdot\vec\sigma$。
+  \item \textbf{指数表示（定理）}：定义$U(\vec n,\omega)=\cos\frac{\omega}{2}\mathbf{1}+i\sin\frac{\omega}{2}\,\vec n\cdot\vec\sigma$，则$U(\vec n,\omega)=\exp\!\big(\tfrac{i}{2}\omega\,\vec n\cdot\vec\sigma\big)$。
+  \item \textbf{等价参数/周期性}：$-U(\vec n,\omega)=U(-\vec n,2\pi-\omega)$，$U(\vec n,-\omega)=U(-\vec n,\omega)$；并且$U(\vec n,\omega+4\pi k)=U(\vec n,\omega)$，$U(\vec n,\omega+2\pi k)=(-1)^kU(\vec n,\omega)$。
+\end{itemize}
+
+\section*{$SU(2)$ 的共轭类/中心/类函数}
+\begin{itemize}
+  \item \textbf{共轭类（定理）}：固定$\omega\in[0,2\pi]$时，$\{U(\vec n,\omega)\mid \forall \vec n\}$构成一个共轭类（等价于“共轭类由$\omega$标记”）。
+  \item \textbf{迹不变量（必要条件）}：共轭不变$\Rightarrow \mathrm{tr}(U)=\mathrm{tr}(U'U{U'}^{-1})$；且$\mathrm{tr}\,U(\vec n,\omega)=2\cos\frac{\omega}{2}$，故共轭$\Rightarrow$同$\cos\frac{\omega}{2}$（在$\omega\in[0,2\pi]$内等价于同$\omega$）。
+  \item \textbf{充分性}：同$\omega$的$U(\vec n,\omega)$彼此共轭（可共轭到$U(\vec e_3,\omega)$）。
+  \item \textbf{中心（定理）}：$Z(SU(2))=\mathbb{Z}_2=\{\mathbf{1},-\mathbf{1}\}$。
+  \item \textbf{类函数（定义/推论）}：若$U\sim U'$则$f(U)=f(U')$，称$f$为类函数；则$f(U(\vec n,\omega))$仅依赖$\omega$，且由$U(\vec n,-\omega)=U(-\vec n,\omega)$知$f(\omega)$为偶函数：$f(-\omega)=f(\omega)$。
+\end{itemize}
+
+\section*{$SO(3)$：定义/参数/共轭/指数}
+\begin{itemize}
+  \item \textbf{定义}：$SO(3)=\{R\in M_{3}(\mathbb{R})\mid R^{T}R=\mathbf{1},\ \det R=1\}$。
+  \item \textbf{轴角参数}：任意$R\in SO(3)$可记为$R(\vec n,\omega)$（单位轴$\vec n$与转角$\omega$）；基本等价/周期性：$R(\vec n,\omega+2\pi k)=R(\vec n,\omega)$，$R(\vec n,\omega)=R(-\vec n,2\pi-\omega)$，通常约定$\omega\in[0,\pi]$且$R(\vec n,\pi)=R(-\vec n,\pi)$。
+  \item \textbf{李代数与对易关系}：取生成元$T_i$满足$[T_i,T_j]=i\epsilon_{ijk}T_k$。
+  \item \textbf{指数表示（定理）}：$R(\vec n,\omega)=\exp(i\omega\,\vec n\cdot\vec T)$（亦写作$\exp(i\vec\omega\cdot\vec T)$，$\vec\omega=\omega\vec n$）。
+  \item \textbf{共轭变换（性质）}：对任意$S\in SO(3)$，有$R(S\vec n,\omega)=S\,R(\vec n,\omega)\,S^{-1}$；因此$SO(3)$中“转角相同”的转动彼此共轭（共轭类由$\omega$标记）。
+\end{itemize}
+
+\section*{$\mathbb{R}^3$ 与 $2\times2$ 无迹厄密矩阵}
+\begin{itemize}
+  \item \textbf{对应（定理）}：$\vec x\in\mathbb{R}^3 \leftrightarrow \hat x=\sum_{a=1}^3 x_a\sigma_a$（$\sigma_a$为Pauli矩阵）；$\hat x$为$2\times2$无迹厄密矩阵。
+  \item \textbf{完备性/取系数}：任意$2\times2$无迹厄密矩阵都可写成$\sum_a x_a\sigma_a$，且$x_a=\tfrac12\mathrm{tr}(\hat x\,\sigma_a)$。
+\end{itemize}
+
+\section*{$SU(2)\to SO(3)$：伴随作用与覆盖映射}
+\begin{itemize}
+  \item \textbf{内积（迹表示）}：对$\hat x=\sum_a x_a\sigma_a,\ \hat y=\sum_a y_a\sigma_a$，有$\tfrac12\mathrm{tr}(\hat x\hat y)=\sum_a x_ay_a=\vec x\cdot\vec y$。
+  \item \textbf{有向体积（迹表示）}：$\mathrm{tr}(\hat x\hat y\hat z)=2i\,\vec x\cdot(\vec y\times\vec z)$（等价写法：$\vec x\cdot(\vec y\times\vec z)=\tfrac{1}{2i}\mathrm{tr}(\hat x\hat y\hat z)$）。
+  \item \textbf{伴随作用}：对$U\in SU(2)$，定义$\hat x\mapsto \hat x'=U\hat xU^{-1}=U\hat xU^{\dagger}$；该作用保持无迹与厄密性。
+  \item \textbf{诱导的$3$维线性变换}：由$\hat x'=\sum_a x'_a\sigma_a$定义$\vec x'\in\mathbb{R}^3$，并给出$\vec x'=R(U)\vec x$。
+  \item \textbf{$R(U)$ 的定义}：$R(U)_{ab}:=\tfrac12\mathrm{tr}(U\sigma_bU^{-1}\sigma_a)=\tfrac12\mathrm{tr}(U^{-1}\sigma_aU\sigma_b)$（注意指标顺序）。
+  \item \textbf{值域}：$R(U)$保持内积$\langle R(U)x,R(U)y\rangle=\langle x,y\rangle$且保持有向体积$\Rightarrow \det R(U)=1$，故$R(U)\in SO(3)$。
+  \item \textbf{同态（定理）}：$R(U_1U_2)=R(U_1)R(U_2)$，因此$R:SU(2)\to SO(3)$为群同态。
+  \item \textbf{核与满射（结论）}：$\ker R=\{\pm\mathbf{1}_{2\times2}\}=\mathbb{Z}_2$，且$R$满射；从而$SU(2)/\mathbb{Z}_2\simeq SO(3)$。
+\end{itemize}
+
+\section*{$SU(2)$ 与 $SO(3)$：2:1 覆盖与陪集观点}
+\begin{itemize}
+  \item \textbf{同态核定理}：$SO(3)\simeq SU(2)/\ker R=SU(2)/\mathbb{Z}_2$。
+  \item \textbf{2:1（定理）}：因$\ker R=\mathbb{Z}_2$，$R$为$2:1$同态；每个$SO(3)$元素的原像恰有两个$SU(2)$元素$U$与$-U$，且$R(U)=R(-U)$。
+  \item \textbf{对径点视同}：若$U=x_4\mathbf{1}+i\sum_{a=1}^3 x_a\sigma_a$（$(x_1,\dots,x_4)\in S^3$），则$-U$对应$(-x_1,\dots,-x_4)$；商$SU(2)/\mathbb{Z}_2$等价于$S^3$上对径点识别，故$SO(3)\cong \mathbb{R}P^{3}$。
+  \item \textbf{轴角自洽性}：$R(U(\vec n,\omega))=R(\vec n,\omega)=R(-\vec n,2\pi-\omega)=R(-U(\vec n,\omega))$。
+\end{itemize}
+
+\section*{$SU(2)$ 的 $U(1)$ 子群与共轭}
+\begin{itemize}
+  \item \textbf{$U(1)$ 子群（例/定义）}：固定$\vec n$，$U(1)_{\vec n}:=\{U(\vec n,\omega)\mid \omega\in\mathbb{R}\}$是$SU(2)$子群；对$\vec n=\vec e_3$，$U(\vec e_3,\omega)=\mathrm{diag}(e^{i\omega/2},e^{-i\omega/2})$，并有$U(\vec e_3,\omega_1)U(\vec e_3,\omega_2)=U(\vec e_3,\omega_1+\omega_2)$，$U(\vec e_3,-\omega)=U(\vec e_3,\omega)^{-1}$。
+  \item \textbf{周期性/同构}：$U(\vec e_3,4\pi)=U(\vec e_3,0)$且$U(\vec e_3,\omega+4\pi)=U(\vec e_3,\omega)$；因此$U(1)_{\vec e_3}\cong U(1)$（并体现$4\pi$周期）。
+  \item \textbf{共轭（定理）}：$SU(2)$中任意两个$U(1)$子群彼此共轭：存在$X(\theta,\varphi)\in SU(2)$使$U(\vec n,\omega)=X(\theta,\varphi)^{-1}U(\vec e_3,\omega)X(\theta,\varphi)$，从而$\{U(\vec n,\omega)\}=X^{-1}\{U(\vec e_3,\omega)\}X$。
+  \item \textbf{中心包含}：$\{\mathbf{1},-\mathbf{1}\}\subset U(1)_{\vec n}$（任意$\vec n$）。
+\end{itemize}
+
+\section*{陪集空间 $SU(2)/U(1)$ 的一个不变量描述}
+\begin{itemize}
+  \item \textbf{右陪集}：取$U(1)=U(1)_{\vec e_3}=\{U(\vec e_3,\omega)\}$，则右陪集$U(1)\,u$由$u\in SU(2)$决定。
+  \item \textbf{不变量}：若$u=\begin{pmatrix} a & b \\ -\bar b & \bar a \end{pmatrix}$（$|a|^2+|b|^2=1$），则在同一右陪集中$u_{11}/u_{12}=a/b$不变；其取值范围为$\mathbb{C}\cup\{\infty\}$（$b=0\Rightarrow \infty$，$a=0\Rightarrow 0$）。
+\end{itemize}
+
+\section*{商空间 $SU(2)/U(1)$ 与 Hopf 纤维化}
+\begin{itemize}
+  \item \textbf{结论}：陪集$SU(2)/U(1)$与比值集合$\mathbb{C}\cup\{\infty\}$一一对应，故$SU(2)/U(1)\simeq \mathbb{C}\cup\{\infty\}\simeq S^{2}\simeq \mathbb{C}P^{1}$。
+  \item \textbf{Hopf fibration}：$S^{3}\simeq SU(2)$视为$\mathbb{C}P^{1}$上的$U(1)$主丛：$S^{3}/U(1)=S^{2}$。
+  \item \textbf{同伦（结论）}：$\pi_{3}(S^{3})=\pi_{3}(S^{2})=\mathbb{Z}$（并可记作$\pi_n(S^3)=\pi_n(S^2),\ n\ge 3$）。
+\end{itemize}
+
+\section*{$SO(3)$ 的 $SO(2)$ 子群与原像}
+\begin{itemize}
+  \item \textbf{$SO(2)$ 子群}：给定单位轴$\vec n$，$SO(2)_{\vec n}:=\{R(\vec n,\omega)\mid \omega\in[0,2\pi]\}\le SO(3)$。
+  \item \textbf{像与原像}：$R(U(1)_{\vec n})=SO(2)_{\vec n}$，且$R^{-1}(SO(2)_{\vec n})=U(1)_{\vec n}$（利用$R(\pm U(\vec n,\omega))=R(\vec n,\omega)$与$U$的$4\pi$周期性）。
+\end{itemize}
+
+\section*{$SU(2)$ 的循环有限子群（由 $4\pi$ 周期性）}
+\begin{itemize}
+  \item \textbf{定义}：固定$\vec n$，$\widehat{\mathbb{Z}}_{n}:=\{U(\vec n,\tfrac{4\pi}{n}k)\mid k=0,1,\dots,n-1\}\le U(1)_{\vec n}\le SU(2)$，且$\big(U(\vec n,\tfrac{4\pi}{n})\big)^n=U(\vec n,4\pi)=\mathbf{1}$。
+  \item \textbf{唯一的$2$阶子群}：$\widehat{\mathbb{Z}}_{2}=\{\mathbf{1},-\mathbf{1}\}$（与$\vec n$无关），并且$\widehat{\mathbb{Z}}_{2}\subset Z(SU(2))$。
+  \item \textbf{在$SO(3)$中的像}：$R(\widehat{\mathbb{Z}}_{n})=\{R(\vec n,\tfrac{4\pi}{n}k)\}$，且$R(\widehat{\mathbb{Z}}_{n})=\mathbb{Z}_{n}$（$n$奇），$R(\widehat{\mathbb{Z}}_{n})=\mathbb{Z}_{n/2}$（$n$偶）；特别地$R(\widehat{\mathbb{Z}}_{2})=\{\mathbf{1}_{3\times3}\}$。
+\end{itemize}
+
+\section*{覆盖映射下的有限子群关系}
+\begin{itemize}
+  \item \textbf{循环群的原像}：对$SO(3)$中的循环子群$\mathbb{Z}_n=\{R(\vec n,\tfrac{2\pi}{n}k)\}$，其在$R:SU(2)\to SO(3)$下的原像为一个包含$\{\pm\mathbf{1}\}$的有限子群（典型为$\widehat{\mathbb{Z}}_{2n}$），并满足$\widehat{\mathbb{Z}}_{2n}/\{\pm\mathbf{1}\}\cong \mathbb{Z}_n$。
+  \item \textbf{关系式（记号）}：同一$\mathbb{Z}_n$在$SU(2)$中的不同循环原像可相差一个中心因子$\{\pm\mathbf{1}\}$；例如$R(\widehat{\mathbb{Z}}_{6})=R(\widehat{\mathbb{Z}}_{3})=\mathbb{Z}_3$，且$\widehat{\mathbb{Z}}_{6}=R^{-1}(\mathbb{Z}_3)=\widehat{\mathbb{Z}}_{3}\times\{\mathbf{1},-\mathbf{1}\}$。
+\end{itemize}
+
+\section*{$SU(2)$ 有限子群与 $SO(3)$ 有限子群（结论）}
+\begin{itemize}
+  \item \textbf{提升/二重覆盖}：若$G\le SO(3)$为有限子群，则$R^{-1}(G)\le SU(2)$为有限子群，且包含$\{\pm\mathbf{1}\}$；并有$R^{-1}(G)/\{\pm\mathbf{1}\}\cong G$。
+  \item \textbf{构造（结论）}：$SU(2)$的有限子群$\widehat G$可由某个$SO(3)$有限子群$G$通过$\widehat G=R^{-1}(G)$（或在可行时对$\{\pm\mathbf{1}\}$再取商）得到。
+  \item \textbf{正规子群（结论）}：在$SU(2)$的非平凡有限子群中，中心子群$\widehat{\mathbb{Z}}_2=\{\pm\mathbf{1}\}$是基本的正规子群。
+\end{itemize}
+
+\section*{可迁群作用与陪集（轨道-稳定子）}
+\begin{itemize}
+  \item \textbf{群作用}：$G$在集合/流形$M$上的作用满足$e\cdot x=x$，$(g_1g_2)\cdot x=g_1\cdot(g_2\cdot x)$。
+  \item \textbf{可迁（transitive）}：若$\forall x,x'\in M,\ \exists g\in G$使$g\cdot x=x'$，则作用可迁。
+  \item \textbf{轨道与稳定子}：轨道$\mathcal O_x=\{g\cdot x\mid g\in G\}$；稳定子$G_x=\{g\in G\mid g\cdot x=x\}$。
+  \item \textbf{结论}：作用可迁$\Rightarrow \mathcal O_x=M$且$G_x\simeq G_{x'}$；并有$M\simeq G/G_x$（轨道--陪集对应）。
+  \item \textbf{球面的陪集表示}：$S^{n}\simeq SO(n{+}1)/SO(n)$；特别地$S^{2}\simeq SO(3)/SO(2)\simeq SU(2)/U(1)$。
+\end{itemize}
+
+\section*{表示论回顾：舒尔引理与特征标正交}
+\begin{itemize}
+  \item \textbf{舒尔引理（一）}：若$\mathcal R_1,\mathcal R_2$为不可约表示（空间$V_1,V_2$），且线性映射$X:V_1\to V_2$满足$\mathcal R_2(g)X=X\mathcal R_1(g)$（$\forall g$），则$\mathcal R_1\not\simeq\mathcal R_2\Rightarrow X=0$；若$X\neq0$则$\mathcal R_1\simeq\mathcal R_2$且$X$可逆。
+  \item \textbf{舒尔引理（二）}：若$\mathcal R$为不可约复表示，$X:V\to V$满足$\mathcal R(g)X=X\mathcal R(g)$（$\forall g$），则$X=\lambda\,\mathrm{id}$（$\lambda\in\mathbb{C}$）。
+  \item \textbf{矩阵元/特征标}：$\mathcal R(g)e_i=\sum_j \mathcal R(g)_{ij}e_j$，$\chi_{\mathcal R}(g):=\mathrm{tr}\,\mathcal R(g)$。
+  \item \textbf{完备性（群函数/类函数）}：有限群上任意群函数可展开为$f(g)=\sum_{\alpha}\sum_{ij} f^{\alpha}_{ij}\,\mathcal R^{(\alpha)}_{ij}(g)$；任意类函数可展开为$f([g])=\sum_{\alpha} f_{\alpha}\,\chi_{\mathcal R^{(\alpha)}}([g])$。
+  \item \textbf{有限群正交关系}：对不等价不可约$\mathcal R^{(\alpha)},\mathcal R^{(\beta)}$，有$\frac{1}{|G|}\sum_{g\in G}\mathcal R^{(\alpha)}(g)_{ij}\overline{\mathcal R^{(\beta)}(g)_{\tilde i\tilde j}}=\frac{1}{\dim\mathcal R^{(\alpha)}}\delta_{\alpha\beta}\delta_{i\tilde i}\delta_{j\tilde j}$，以及$\frac{1}{|G|}\sum_{g\in G}\chi_{\alpha}(g)\overline{\chi_{\beta}(g)}=\delta_{\alpha\beta}$。
+  \item \textbf{不可约判据（有限群）}：$\langle\chi_{\mathcal R}\mid\chi_{\mathcal R}\rangle:=\frac{1}{|G|}\sum_{g\in G}|\chi_{\mathcal R}(g)|^2=1\iff \mathcal R\ \text{不可约}$。
+\end{itemize}
+
+\section*{李群积分与 Haar 测度}
+\begin{itemize}
+  \item \textbf{离散群“积分”}：$\int_G[dg]\,f(g):=\frac{1}{|G|}\sum_{g\in G}f(g)$，满足归一化$\int_G[dg]=1$与左右平移不变性$\int_G[dg]\,f(gh)=\int_G[dg]\,f(hg)=\int_G[dg]\,f(g)$。
+  \item \textbf{紧李群 Haar 测度（定义）}：取坐标$x\in\mathbb{R}^n$，令$[dg]=d^n x\,J(x)$且$\int_G[dg]=1$；要求$\int_G[dg]\,f(gh)=\int_G[dg]\,f(hg)=\int_G[dg]\,f(g)$（$\forall f,\forall h\in G$），满足者称为Haar测度（在归一化下唯一）。
+  \item \textbf{$U(1)$}：$u=e^{i\theta}$（$\theta\in[0,2\pi]$），$\int_{U(1)}[du]\,f(u)=\int_0^{2\pi}\frac{d\theta}{2\pi}\,f(e^{i\theta})$。
+  \item \textbf{$SU(2)$}：在$U(\vec n,\omega)$坐标下，$\int_{SU(2)}[dU]\,f(U)=\frac{1}{4\pi^2}\int_0^{2\pi}d\varphi\int_0^\pi\sin\theta\,d\theta\int_0^{2\pi}\sin^2\frac{\omega}{2}\,d\omega\,f(U(\vec n,\omega))$。
+  \item \textbf{类函数化简}：若$f(U)$为类函数则$f(U(\vec n,\omega))=f(\omega)$，从而$\int_{SU(2)}[dU]\,f(U)=\frac{1}{\pi}\int_0^{2\pi}\sin^2\frac{\omega}{2}\,f(\omega)\,d\omega$。
+\end{itemize}
+
+\section*{用 Haar 内积判断 $SU(2)$ 表示}
+\begin{itemize}
+  \item \textbf{特征标正交}：对$SU(2)$不可约表示$\mathcal R,\mathcal R'$，有$\int_{SU(2)}[dU]\,\chi_{\mathcal R}(U)\overline{\chi_{\mathcal R'}(U)}=\delta_{\mathcal R\mathcal R'}$。
+  \item \textbf{不可约判据}：$\int_{SU(2)}[dU]\ |\chi_{\mathcal R}(U)|^2=1\iff \mathcal R\ \text{不可约}$。
+\end{itemize}
+
+\section*{$SU(2)$ 的不可约表示：标记、维数、特征标}
+\begin{itemize}
+  \item \textbf{标记与维数}：不可约表示由自旋$j\in\frac12\mathbb{N}$标记，记为$\mathcal R_j$，且$\dim\mathcal R_j=2j+1$。
+  \item \textbf{绕$e_3$轴的对角形式}：在基$\{\psi_{jm}\}_{m=-j}^{j}$下，$\mathcal R_j(U(\vec e_3,\omega))\psi_{jm}=e^{im\omega}\psi_{jm}$，即$\mathcal R_j(U(\vec e_3,\omega))=\mathrm{diag}(e^{im\omega})_{m=-j}^{j}$。
+  \item \textbf{特征标（类函数）}：$\chi_j(U(\vec n,\omega))=\chi_j(\omega)=\sum_{m=-j}^{j}e^{im\omega}=\frac{\sin\big((j+\tfrac12)\omega\big)}{\sin(\tfrac{\omega}{2})}$。
+\end{itemize}
+
+\section*{特征标的正交与完备（记号）}
+\begin{itemize}
+  \item \textbf{正交归一}：$\int_{SU(2)}[dU]\ \chi_{j_1}(U)\overline{\chi_{j_2}(U)}=\delta_{j_1j_2}$；等价地$\frac{1}{\pi}\int_0^{2\pi}\sin^2\frac{\omega}{2}\ \chi_{j_1}(\omega)\overline{\chi_{j_2}(\omega)}\,d\omega=\delta_{j_1j_2}$。
+  \item \textbf{完备性（形式）}：存在核$K(\omega-\omega')$使$\sum_{j\in\frac12\mathbb{N}}\chi_j(\omega)\overline{\chi_j(\omega')}=K(\omega-\omega')$，并满足$\frac{1}{\pi}\int_0^{2\pi}\sin^2\frac{\omega'}{2}\,K(\omega-\omega')\,f(\omega')\,d\omega'=f(\omega)$（类函数$f$）。
+\end{itemize}
+
+\section*{常见表示与不变量}
+\begin{itemize}
+  \item \textbf{平凡表示}：$j=0$，$\dim=1$，$\mathcal R_0(U)=1$。
+  \item \textbf{基本表示（旋量）}：$j=\tfrac12$，$\dim=2$；存在不变量$\epsilon_{\alpha\beta}$（$\epsilon_{12}=-\epsilon_{21}=-1$）用于缩并，给出$SU(2)$不变标量$-\epsilon_{\alpha\beta}X^\alpha Y^\beta$，并满足$\epsilon^{\alpha\beta}\epsilon_{\beta\gamma}=\delta^\alpha_\gamma$；等价地可定义反对称双线性形式$\langle X,Y\rangle:=-\epsilon_{\alpha\beta}X^\alpha Y^\beta$，并有$\langle UX,UY\rangle=\langle X,Y\rangle$（$\det U=1$）。
+  \item \textbf{伴随/矢量表示与李代数}：$j=1$（$\dim=3$），可由伴随作用$\hat x\mapsto U\hat xU^{-1}$诱导$3$维变换$x'^a=R(U)_{ab}x^b$；由$\{\sigma_a\}$张成的无迹厄密空间可视为$\mathfrak{su}(2)$的表示空间（伴随表示），一般李群$G$也有$\dim G$维伴随表示$\mathfrak g$（李代数）。
+\end{itemize}
+
+\section*{表示的忠实性与中心作用}
+\begin{itemize}
+  \item \textbf{中心元作用}：中心$\mathbb{Z}_2=\{\mathbf{1},-\mathbf{1}\}$在$\mathcal R_j$上满足$\mathcal R_j(-\mathbf{1})=(-1)^{2j}\mathbf{1}$。
+  \item \textbf{忠实性}：若$j\in\mathbb{Z}$则$\mathcal R_j(\mathbf{1})=\mathcal R_j(-\mathbf{1})$（非忠实）；若$j\in\mathbb{Z}+\tfrac12$则$\mathcal R_j(-\mathbf{1})=-\mathbf{1}$（忠实，携带非平凡$\mathbb{Z}_2$“荷”）。
+\end{itemize}
+
+\section*{$SO(3)$ 与旋量（Spinor）}
+\begin{itemize}
+  \item \textbf{诱导变换}：空间矢量$X\mapsto R(\vec n,\omega)X$时，对应自旋态$\psi\mapsto U(\vec n,\omega)\psi$（其中$R_{ab}=\tfrac12\mathrm{tr}(U^{-1}\sigma_aU\sigma_b)$）。
+  \item \textbf{角动量算符共轭变换}：$s_b=\tfrac{\hbar}{2}\sigma_b$满足$s_b' = R_{ab}s_a = U s_b U^{-1}$；若$s_b\psi=\lambda\psi$则$s_b'(U\psi)=\lambda(U\psi)$。
+  \item \textbf{$2\pi$ 变号}：$U(\vec n,2\pi)=-\mathbf{1}$，故$\omega:0\to2\pi$时$X$回到自身而$\psi\to-\psi$（需$4\pi$才回到原态）。
+\end{itemize}
+
+\section*{表示的直和}
+\begin{itemize}
+  \item \textbf{定义}：给定表示$\mathcal R_1:V_1,\ \mathcal R_2:V_2$，直和表示$\mathcal R_1\oplus\mathcal R_2$在$V_1\oplus V_2$上作用为$(\mathcal R_1\oplus\mathcal R_2)(g)(v_1\oplus v_2)=\mathcal R_1(g)v_1\oplus\mathcal R_2(g)v_2$。
+  \item \textbf{矩阵形式}：表示矩阵为块对角$[\mathcal R_1(g)]\oplus[\mathcal R_2(g)]$；且$\dim(V_1\oplus V_2)=\dim V_1+\dim V_2$。
+  \item \textbf{性质}：交换律$\mathcal R_1\oplus\mathcal R_2\simeq\mathcal R_2\oplus\mathcal R_1$，结合律$(\mathcal R_1\oplus\mathcal R_2)\oplus\mathcal R_3\simeq \mathcal R_1\oplus(\mathcal R_2\oplus\mathcal R_3)$（$\simeq$表示等价）。
+\end{itemize}
+
+\section*{表示的张量积}
+\begin{itemize}
+  \item \textbf{定义}：$(\mathcal R_1\otimes\mathcal R_2)(g)(v_1\otimes v_2)=\mathcal R_1(g)v_1\otimes \mathcal R_2(g)v_2$，表示空间为$V_1\otimes V_2$，且$\dim(V_1\otimes V_2)=\dim V_1\cdot \dim V_2$。
+  \item \textbf{矩阵形式}：表示矩阵为分量矩阵的张量积$[\mathcal R_1(g)]\otimes[\mathcal R_2(g)]$。
+  \item \textbf{性质}：单位元$\mathcal R\otimes\mathbf{1}\simeq\mathcal R$（$\mathbf{1}$为1维平凡表示），交换律$\mathcal R_1\otimes\mathcal R_2\simeq\mathcal R_2\otimes\mathcal R_1$，结合律$(\mathcal R_1\otimes\mathcal R_2)\otimes\mathcal R_3\simeq\mathcal R_1\otimes(\mathcal R_2\otimes\mathcal R_3)$，分配律$\mathcal R_1\otimes(\mathcal R_2\oplus\mathcal R_3)\simeq(\mathcal R_1\otimes\mathcal R_2)\oplus(\mathcal R_1\otimes\mathcal R_3)$。
+\end{itemize}
+
+\section*{$SU(2)$ 张量积约化（角动量叠加）}
+\begin{itemize}
+  \item \textbf{分解形式}：$\mathcal R_{j_1}\otimes \mathcal R_{j_2}\simeq \bigoplus_{j\in\frac12\mathbb{N}} N_{j_1j_2}^{j}\,\mathcal R_j$，且特征标满足$\chi_{j_1\otimes j_2}(U)=\chi_{j_1}(U)\chi_{j_2}(U)=\sum_j N_{j_1j_2}^j\,\chi_j(U)$。
+  \item \textbf{重数（Haar 内积）}：$N_{j_1j_2}^{j_3}=\int_{SU(2)}[dU]\ \chi_{j_1}(U)\chi_{j_2}(U)\overline{\chi_{j_3}(U)}$。
+  \item \textbf{选择定则}：$N_{j_1j_2}^{j_3}=1$当且仅当$j_3=|j_1-j_2|,|j_1-j_2|+1,\dots,j_1+j_2$；否则$0$。因此$\mathcal R_{j_1}\otimes\mathcal R_{j_2}\simeq\bigoplus_{j=|j_1-j_2|}^{j_1+j_2}\mathcal R_j$。
+  \item \textbf{对应恒等式}：$\frac{\sin((j_1+\tfrac12)\omega)}{\sin(\tfrac{\omega}{2})}\frac{\sin((j_2+\tfrac12)\omega)}{\sin(\tfrac{\omega}{2})}=\sum_{j=|j_1-j_2|}^{j_1+j_2}\frac{\sin((j+\tfrac12)\omega)}{\sin(\tfrac{\omega}{2})}$。
+\end{itemize}
+
+\section*{$SU(2)$ 不可约表示的多项式实现（$\mathcal R^{(n)}$）}
+\begin{itemize}
+  \item \textbf{基本作用}：$SU(2)$天然作用在$\mathbb{C}^2$上：$\binom{z}{w}\mapsto U\binom{z}{w}$（$U=\begin{pmatrix}a&b\\-\bar b&\bar a\end{pmatrix}$）。
+  \item \textbf{表示空间}：取$V_n=\{f(z,w)\mid f\ \text{是$n$次齐次多项式}\}$，$\dim V_n=n+1$。
+  \item \textbf{拉回作用（定义）}：对$f\in V_n$定义$(U\cdot f)\binom{z}{w}:=f\!\left(U^{-1}\binom{z}{w}\right)$，则给出表示$\mathcal R^{(n)}:SU(2)\to GL(V_n)$。
+  \item \textbf{标准基}：$\psi_k\binom{z}{w}:=z^{\,n-k}w^{\,k}$（$k=0,1,\dots,n$）。
+  \item \textbf{绕$\vec e_3$的特征值}：对$U(\vec e_3,\omega)$有$(\mathcal R^{(n)}(U(\vec e_3,\omega))\psi_k)=e^{\frac{i}{2}\omega(2k-n)}\psi_k$，即矩阵元$\mathcal R^{(n)}(U(\vec e_3,\omega))_{k\ell}=\delta_{k\ell}\,e^{\frac{i}{2}\omega(2k-n)}$。
+  \item \textbf{与自旋记号对应}：令$j=\frac{n}{2},\ m=\frac{1}{2}(2k-n)$，则$m=-j,-j+1,\dots,j$，且$\dim\mathcal R_j=2j+1$。
+\end{itemize}
+
+\section*{$SO(3)$ 的表示：整数自旋与投影表示}
+\begin{itemize}
+  \item \textbf{整数自旋}：由覆盖$R:SU(2)\to SO(3)$，若$j\in\mathbb{N}$则$\mathcal R_j(-\mathbf{1})=\mathbf{1}$，可定义单值的$SO(3)$表示$\mathcal R^{SO(3)}_j(R):=\mathcal R_j(U)$（$R=R(U)$）。
+  \item \textbf{半整数自旋}：若$j\in\mathbb{N}+\tfrac12$则$\mathcal R_j(-\mathbf{1})=-\mathbf{1}$，因此只能得到$SO(3)$的\textbf{投影表示}：$U(g_1)U(g_2)=e^{i\alpha(g_1,g_2)}U(g_1g_2)$（相位因子不一定可去）。
+\end{itemize}
+
+\section*{球谐函数与 $SO(3)$ 的不可约表示（记号）}
+\begin{itemize}
+  \item \textbf{球谐函数}：$j\in\mathbb{N},\ m=-j,\dots,j$的$\{Y_{jm}(\theta,\varphi)\}$张成$SO(3)$的一个$(2j+1)$维表示空间。
+  \item \textbf{正交与完备}：$\int_0^{2\pi}\!d\varphi\int_0^\pi\!\sin\theta\,d\theta\ Y_{jm}(\theta,\varphi)\overline{Y_{j'm'}(\theta,\varphi)}=\delta_{jj'}\delta_{mm'}$，且$L^2(S^2)=\bigoplus_{j=0}^{\infty}\mathcal R^{SO(3)}_j$（可约分解）。
+  \item \textbf{转动下的变换}：$Y_{jm}(R^{-1}(\theta,\varphi))=\sum_{m'} \mathcal R^{SO(3)}_j(R)_{mm'}\,Y_{jm'}(\theta,\varphi)$（Wigner矩阵元）。
+\end{itemize}
+
+\section*{氢原子简并与 $SO(4)$（结论式）}
+\begin{itemize}
+  \item \textbf{额外对称性}：库仑势情形具有$SO(4)$对称性（除$SO(3)$角动量外还有Runge--Lenz型守恒量）。
+  \item \textbf{群同构}：$SO(4)\simeq (SU(2)\times SU(2))/\mathbb{Z}_2^{\mathrm{diag}}$，且$SO(3)\times SO(3)=SO(4)/\mathbb{Z}_2$。
+  \item \textbf{能级表示与简并度}：第$n$能级可视为$SO(4)$的不可约表示$(J,J)$（$J=\frac{n-1}{2}$），其维数为$(2J+1)^2=n^2$；并有$\mathcal R_J\otimes\mathcal R_J\simeq \bigoplus_{j=0}^{2J}\mathcal R_j=\bigoplus_{j=0}^{n-1}\mathcal R_j$，从而$\sum_{j=0}^{n-1}(2j+1)=n^2$。
+\end{itemize}
+
+\section*{张量积含平凡表示的判据（$SU(2)$）}
+\begin{itemize}
+  \item \textbf{判据}：由$\mathcal R_{j_1}\otimes\mathcal R_{j_2}\simeq\bigoplus_{j=|j_1-j_2|}^{j_1+j_2}\mathcal R_j$知，张量积包含平凡表示$\mathcal R_0$当且仅当$j_1=j_2$。
+\end{itemize}
+
+\section*{$SU(2)$ 特征标的 $q$-维度与 root of unity}
+\begin{itemize}
+  \item \textbf{$q$-维度}：令$q:=e^{i\omega}$，则$\chi_j(\omega)=\frac{\sin((j+\tfrac12)\omega)}{\sin(\tfrac{\omega}{2})}=\frac{q^{\frac{2j+1}{2}}-q^{-\frac{2j+1}{2}}}{q^{\frac12}-q^{-\frac12}}=: \dim_q\mathcal R_j$，且$q\to1$时$\dim_q\mathcal R_j\to \dim\mathcal R_j=2j+1$。
+  \item \textbf{level $k$ 与 root of unity}：取$\omega_k:=\frac{2\pi}{k+2}$（$k\in\mathbb{N}_{>0}$），则$q=e^{i\omega_k}=e^{\frac{2\pi i}{k+2}}$为$(k+2)$次单位根，并有$\chi_j(\omega_k)=\frac{\sin\frac{(2j+1)\pi}{k+2}}{\sin\frac{\pi}{k+2}}$。
+\end{itemize}
+
+\section*{root of unity 下的截断与 $SU(2)_k$ 融合（结论）}
+\begin{itemize}
+  \item \textbf{特征标截断（定理）}：在$\omega=\omega_k$处，$\chi_{j_1}(\omega_k)\chi_{j_2}(\omega_k)=\sum_{j=|j_1-j_2|}^{\min(j_1+j_2,\ k-j_1-j_2)} \chi_j(\omega_k)$（此处用$N_{j_1j_2}^j=1$的选择定则）。
+  \item \textbf{融合规则（定义）}：定义$SU(2)_k$ WZW 的“融合”$\mathcal R_{j_1}\times \mathcal R_{j_2}:=\bigoplus_{j=|j_1-j_2|}^{\min(j_1+j_2,\ k-j_1-j_2)} \mathcal R_j$，对应融合系数$\mathcal N_{j_1j_2}^{j_3}\in\{0,1\}$，且自旋仅允许$j\in\{0,\tfrac12,\dots,\tfrac{k}{2}\}$。
+  \item \textbf{性质}：$\mathcal N_{j_1j_2}^{j_3}=\mathcal N_{j_2j_1}^{j_3}=\mathcal N_{j_1j_3}^{j_2}$，并满足结合律$\sum_{j'}\mathcal N_{j_1j_2}^{j'}\mathcal N_{j'j_3}^{j_4}=\sum_{j'}\mathcal N_{j_2j_3}^{j'}\mathcal N_{j'j_1}^{j_4}$（求和$0\le j'\le k/2$）。
+  \item \textbf{量子维度（记号）}：$d_j:=\dim_q\mathcal R_j\big|_{q=e^{\frac{2\pi i}{k+2}}}=\chi_j(\omega_k)$。
+\end{itemize}
+
+\section*{$S$-矩阵与 Verlinde 公式（记号）}
+\begin{itemize}
+  \item \textbf{$S$-矩阵}：$S_{j_1}^{\,j_2}:=\sqrt{\frac{2}{k+2}}\sin\!\Big(\frac{\pi}{k+2}(2j_1+1)(2j_2+1)\Big)$，并有$\chi_{j_1}\!\big(\frac{2\pi}{k+2}(2j_2+1)\big)=\frac{S_{j_1}^{\,j_2}}{S_{0}^{\,j_2}}$。
+  \item \textbf{Verlinde 公式}：$\mathcal N_{j_1j_2}^{j_3}=\sum_{j=0/2}^{k/2}\frac{S_{j_1}^{\,j}\,S_{j_2}^{\,j}\,(S^{-1})_{j}^{\,j_3}}{S_{0}^{\,j}}$。
+  \item \textbf{本征值/对角化}：视$(\mathcal N_{j_1})_{j_2}^{j_3}:=\mathcal N_{j_1j_2}^{j_3}$为矩阵，则其本征值可写为$\frac{S_{j_1}^{\,j}}{S_0^{\,j}}=\chi_{j_1}\!\big(\frac{2\pi}{k+2}(2j+1)\big)$。
+\end{itemize}
+
+\section*{$SU(2)$ Chern--Simons 与 Wilson loop（记号）}
+\begin{itemize}
+  \item \textbf{作用量（level $k$）}：$S=\frac{k}{4\pi}\int_M \mathrm{tr}\!\left(A\,dA+\frac{2}{3}A^3\right)$（$k\in\mathbb{N}$），$Z=\int[DA]\,e^{iS}$（与度规无关的TQFT量）。
+  \item \textbf{Wilson loop}：$\big\langle\prod_i W_{j_i}(C_i)\big\rangle:=\frac{1}{Z}\int[DA]\,e^{iS}\prod_i \mathrm{tr}\,\mathcal P\exp\!\left(\oint_{C_i}A\right)$。
+  \item \textbf{$S^3$ 上结果（结论）}：$Z=S_0^{\,0}$，且一类圈结（unknot）满足$\langle W_j\rangle=\frac{S_0^{\,j}}{S_0^{\,0}}=\chi_j(\omega_k)=d_j$（$\omega_k=\frac{2\pi}{k+2}$）。
+\end{itemize}
+
+\section*{$SU(2)$ 不可约表示与杨图（结论）}
+\begin{itemize}
+  \item \textbf{合法杨图}：$SU(2)$不可约表示可用最多两行的杨图$Y=(Y_1\ge Y_2\ge 0)$标记。
+  \item \textbf{等价约化}：两行杨图$Y_1=m+n,\ Y_2=m$与单行长度$n$等价（可“删去满两行的列”），因此对应自旋$j=\frac{n}{2}$，维数$\dim\mathcal R_j=n+1=2j+1$。
+\end{itemize}
+
+\section*{用杨图理解 $SU(2)$ 张量积分解（规则式）}
+\begin{itemize}
+  \item \textbf{规则（同Clebsch--Gordan）}：若以单行长度$n=2j$标记表示，则$\mathcal R_{n}\otimes\mathcal R_{n'}\simeq \bigoplus_{r=|n-n'|,\,|n-n'|+2,\dots,n+n'} \mathcal R_{r}$（等价写法：$\mathcal R_{j}\otimes\mathcal R_{j'}\simeq\bigoplus_{t=|j-j'|}^{j+j'}\mathcal R_t$）。
+  \item \textbf{杨图操作要点}：做“加盒子”时始终保持最多两行；若出现满两行的整列可删去并视为同一表示。
+\end{itemize}
 \end{multicols*}
 \end{document}
 
