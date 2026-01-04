@@ -1046,90 +1046,90 @@ $S_3$ 群 2 维不可约表示 [2,1] 的所有矩阵：
 %======================================
 % 通用规则：从杨图读出正交表示矩阵
 %======================================
-\section*{通用规则：直接读出矩阵元}
-$S_n$ 群生成元 $(k, k+1)$ 的矩阵元可由标准杨盘（SYT）直接定出。设杨图 $[\lambda]$ 有标准杨盘 $T_1, T_2, \dots$。
-\begin{enumerate}
-    \item \textbf{对角元}：
-    \begin{itemize}
-        \item 若 $k$ 和 $k+1$ 在 $T_r$ 中位于\textbf{同一行}：$(k, k+1)_{rr} = 1$。
-        \item 若 $k$ 和 $k+1$ 在 $T_r$ 中位于\textbf{同一列}：$(k, k+1)_{rr} = -1$。
-    \end{itemize}
-    \item \textbf{非对角元}：
-    若 $k, k+1$ 既不同行也不同列，设 $(k, k+1)$ 将 $T_r$ 变为 $T_s$（即交换数字位置后仍为标准杨盘），且在 $T_r$ 中 $k$ 到 $k+1$ 的\textbf{轴距离}为 $d$（令 $\rho = 1/d$），则：
-    \[
-    \begin{pmatrix} (k, k+1)_{rr} & (k, k+1)_{rs} \\ (k, k+1)_{sr} & (k, k+1)_{ss} \end{pmatrix} = 
-    \begin{pmatrix} -\rho & \sqrt{1-\rho^2} \\ \sqrt{1-\rho^2} & \rho \end{pmatrix}
-    \]
-\end{enumerate}
+% \section*{通用规则：直接读出矩阵元}
+% $S_n$ 群生成元 $(k, k+1)$ 的矩阵元可由标准杨盘（SYT）直接定出。设杨图 $[\lambda]$ 有标准杨盘 $T_1, T_2, \dots$。
+% \begin{enumerate}
+%     \item \textbf{对角元}：
+%     \begin{itemize}
+%         \item 若 $k$ 和 $k+1$ 在 $T_r$ 中位于\textbf{同一行}：$(k, k+1)_{rr} = 1$。
+%         \item 若 $k$ 和 $k+1$ 在 $T_r$ 中位于\textbf{同一列}：$(k, k+1)_{rr} = -1$。
+%     \end{itemize}
+%     \item \textbf{非对角元}：
+%     若 $k, k+1$ 既不同行也不同列，设 $(k, k+1)$ 将 $T_r$ 变为 $T_s$（即交换数字位置后仍为标准杨盘），且在 $T_r$ 中 $k$ 到 $k+1$ 的\textbf{轴距离}为 $d$（令 $\rho = 1/d$），则：
+%     \[
+%     \begin{pmatrix} (k, k+1)_{rr} & (k, k+1)_{rs} \\ (k, k+1)_{sr} & (k, k+1)_{ss} \end{pmatrix} = 
+%     \begin{pmatrix} -\rho & \sqrt{1-\rho^2} \\ \sqrt{1-\rho^2} & \rho \end{pmatrix}
+%     \]
+% \end{enumerate}
 
-\textbf{轴距离 (Axial Distance) 定义}：
-从数字 $a$ 开始数格子到 $b$：
-\begin{itemize}
-    \item 向\textbf{左}或向\textbf{下}数 1 格：$+1$
-    \item 向\textbf{右}或向\textbf{上}数 1 格：$-1$
-\end{itemize}
-最后得到的步数之和即为 $d = 1/\rho$。
-\begin{itemize}
-    \item 例：\tiny\begin{ytableau} \none & a \\ b \end{ytableau} ($a \to b$: 左1下1)，$d=2 \Rightarrow \rho=1/2$。
-    \item 例：\tiny\begin{ytableau} \none & b \\ a \end{ytableau} ($a \to b$: 右1上1)，$d=-2 \Rightarrow \rho=-1/2$。
-\end{itemize}
+% \textbf{轴距离 (Axial Distance) 定义}：
+% 从数字 $a$ 开始数格子到 $b$：
+% \begin{itemize}
+%     \item 向\textbf{左}或向\textbf{下}数 1 格：$+1$
+%     \item 向\textbf{右}或向\textbf{上}数 1 格：$-1$
+% \end{itemize}
+% 最后得到的步数之和即为 $d = 1/\rho$。
+% \begin{itemize}
+%     \item 例：\tiny\begin{ytableau} \none & a \\ b \end{ytableau} ($a \to b$: 左1下1)，$d=2 \Rightarrow \rho=1/2$。
+%     \item 例：\tiny\begin{ytableau} \none & b \\ a \end{ytableau} ($a \to b$: 右1上1)，$d=-2 \Rightarrow \rho=-1/2$。
+% \end{itemize}
 
-\section*{应用：$S_3$ 群 [2,1] 表示 (重算)}
-标准杨盘：$T_1 =$ \tiny\begin{ytableau} 1 & 2 \\ 3 \end{ytableau}, \quad $T_2 =$ \tiny\begin{ytableau} 1 & 3 \\ 2 \end{ytableau}。
-\begin{itemize}
-    \item \textbf{(12)}：
-    \begin{itemize}
-        \item $T_1$: 1,2 同行 $\to 1$。
-        \item $T_2$: 1,2 同列 $\to -1$。
-        \item 矩阵：$\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$。
-    \end{itemize}
-    \item \textbf{(23)}：
-    \begin{itemize}
-        \item $T_1$ 中 2,3 不同行不同列。$2(1,2) \to 3(2,1)$。
-        \item 路径：左1 ($+1$)，下1 ($+1$)。距离 $d=2 \Rightarrow \rho=1/2$。
-        \item 矩阵：$\begin{pmatrix} -1/2 & \sqrt{3}/2 \\ \sqrt{3}/2 & 1/2 \end{pmatrix}$。
-    \end{itemize}
-\end{itemize}
+% \section*{应用：$S_3$ 群 [2,1] 表示 (重算)}
+% 标准杨盘：$T_1 =$ \tiny\begin{ytableau} 1 & 2 \\ 3 \end{ytableau}, \quad $T_2 =$ \tiny\begin{ytableau} 1 & 3 \\ 2 \end{ytableau}。
+% \begin{itemize}
+%     \item \textbf{(12)}：
+%     \begin{itemize}
+%         \item $T_1$: 1,2 同行 $\to 1$。
+%         \item $T_2$: 1,2 同列 $\to -1$。
+%         \item 矩阵：$\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$。
+%     \end{itemize}
+%     \item \textbf{(23)}：
+%     \begin{itemize}
+%         \item $T_1$ 中 2,3 不同行不同列。$2(1,2) \to 3(2,1)$。
+%         \item 路径：左1 ($+1$)，下1 ($+1$)。距离 $d=2 \Rightarrow \rho=1/2$。
+%         \item 矩阵：$\begin{pmatrix} -1/2 & \sqrt{3}/2 \\ \sqrt{3}/2 & 1/2 \end{pmatrix}$。
+%     \end{itemize}
+% \end{itemize}
 
-\section*{应用：$S_4$ 群 [3,1] 表示 (3维)}
-标准杨盘：
-$T_1=$ \tiny\begin{ytableau}1&2&3\\4\end{ytableau}, $T_2=$ \tiny\begin{ytableau}1&2&4\\3\end{ytableau}, $T_3=$ \tiny\begin{ytableau}1&3&4\\2\end{ytableau}。
-\begin{itemize}
-    \item \textbf{(12)}：
-    $T_1(1), T_2(1), T_3(-1)$ $\Rightarrow \text{diag}(1, 1, -1)$。
-    \item \textbf{(23)}：
-    \begin{itemize}
-        \item $T_1$: 2,3 同行 $\to 1$。
-        \item $T_2 \leftrightarrow T_3$: $2(1,2) \to 3(2,1)$，距离 $d=2 \Rightarrow \rho=1/2$。
-        \item 矩阵：$\begin{pmatrix} 1 & 0 & 0 \\ 0 & -1/2 & \sqrt{3}/2 \\ 0 & \sqrt{3}/2 & 1/2 \end{pmatrix}$。
-    \end{itemize}
-    \item \textbf{(34)}：
-    \begin{itemize}
-        \item $T_3$: 3,4 同行 $\to 1$。
-        \item $T_1 \leftrightarrow T_2$: $3(1,3) \to 4(2,1)$。
-        \item 路径：左1(+1), Left(+1), Down(+1). Wait, 3 is at (1,3), 4 is at (2,1).
-        \item Path: Left(to 1,2)+1, Left(to 1,1)+1, Down(to 2,1)+1. Sum=3. $\rho=1/3$。
-        \item 矩阵：$\begin{pmatrix} -1/3 & \sqrt{8}/3 & 0 \\ \sqrt{8}/3 & 1/3 & 0 \\ 0 & 0 & 1 \end{pmatrix}$。
-    \end{itemize}
-\end{itemize}
+% \section*{应用：$S_4$ 群 [3,1] 表示 (3维)}
+% 标准杨盘：
+% $T_1=$ \tiny\begin{ytableau}1&2&3\\4\end{ytableau}, $T_2=$ \tiny\begin{ytableau}1&2&4\\3\end{ytableau}, $T_3=$ \tiny\begin{ytableau}1&3&4\\2\end{ytableau}。
+% \begin{itemize}
+%     \item \textbf{(12)}：
+%     $T_1(1), T_2(1), T_3(-1)$ $\Rightarrow \text{diag}(1, 1, -1)$。
+%     \item \textbf{(23)}：
+%     \begin{itemize}
+%         \item $T_1$: 2,3 同行 $\to 1$。
+%         \item $T_2 \leftrightarrow T_3$: $2(1,2) \to 3(2,1)$，距离 $d=2 \Rightarrow \rho=1/2$。
+%         \item 矩阵：$\begin{pmatrix} 1 & 0 & 0 \\ 0 & -1/2 & \sqrt{3}/2 \\ 0 & \sqrt{3}/2 & 1/2 \end{pmatrix}$。
+%     \end{itemize}
+%     \item \textbf{(34)}：
+%     \begin{itemize}
+%         \item $T_3$: 3,4 同行 $\to 1$。
+%         \item $T_1 \leftrightarrow T_2$: $3(1,3) \to 4(2,1)$。
+%         \item 路径：左1(+1), Left(+1), Down(+1). Wait, 3 is at (1,3), 4 is at (2,1).
+%         \item Path: Left(to 1,2)+1, Left(to 1,1)+1, Down(to 2,1)+1. Sum=3. $\rho=1/3$。
+%         \item 矩阵：$\begin{pmatrix} -1/3 & \sqrt{8}/3 & 0 \\ \sqrt{8}/3 & 1/3 & 0 \\ 0 & 0 & 1 \end{pmatrix}$。
+%     \end{itemize}
+% \end{itemize}
 
-\section*{应用：$S_4$ 群 [2,2] 表示 (2维)}
-$T_1=$ \tiny\begin{ytableau}1&2\\3&4\end{ytableau}, $T_2=$ \tiny\begin{ytableau}1&3\\2&4\end{ytableau}。
-\begin{itemize}
-    \item \textbf{(12)}: $T_1(1), T_2(-1) \Rightarrow \text{diag}(1, -1)$。
-    \item \textbf{(34)}: $T_1(1), T_2(-1) \Rightarrow \text{diag}(1, -1)$。
-    \item \textbf{(23)}: $T_1 \leftrightarrow T_2$. $2(1,2) \to 3(2,1)$. $d=2 \Rightarrow \rho=1/2$.
-    \item 矩阵：$\begin{pmatrix} -1/2 & \sqrt{3}/2 \\ \sqrt{3}/2 & 1/2 \end{pmatrix}$。
-\end{itemize}
+% \section*{应用：$S_4$ 群 [2,2] 表示 (2维)}
+% $T_1=$ \tiny\begin{ytableau}1&2\\3&4\end{ytableau}, $T_2=$ \tiny\begin{ytableau}1&3\\2&4\end{ytableau}。
+% \begin{itemize}
+%     \item \textbf{(12)}: $T_1(1), T_2(-1) \Rightarrow \text{diag}(1, -1)$。
+%     \item \textbf{(34)}: $T_1(1), T_2(-1) \Rightarrow \text{diag}(1, -1)$。
+%     \item \textbf{(23)}: $T_1 \leftrightarrow T_2$. $2(1,2) \to 3(2,1)$. $d=2 \Rightarrow \rho=1/2$.
+%     \item 矩阵：$\begin{pmatrix} -1/2 & \sqrt{3}/2 \\ \sqrt{3}/2 & 1/2 \end{pmatrix}$。
+% \end{itemize}
 
-\section*{应用：$S_4$ 群 [2,1,1] 表示 (3维)}
-$T_1=$ \tiny\begin{ytableau}1&2\\3\\4\end{ytableau}, $T_2=$ \tiny\begin{ytableau}1&3\\2\\4\end{ytableau}, $T_3=$ \tiny\begin{ytableau}1&4\\2\\3\end{ytableau}。
-\begin{itemize}
-    \item \textbf{(12)}: $\text{diag}(1, -1, -1)$。
-    \item \textbf{(23)}: 与 [3,1] 情形类似，$\rho=1/2$。涉及 $T_1, T_2$。
-    \item \textbf{(34)}: 涉及 $T_2, T_3$。$3(1,2) \to 4(3,1)$。
-    \item Path: Left(+1), Down(+1), Down(+1). Sum=3. $\rho=1/3$。
-\end{itemize}
+% \section*{应用：$S_4$ 群 [2,1,1] 表示 (3维)}
+% $T_1=$ \tiny\begin{ytableau}1&2\\3\\4\end{ytableau}, $T_2=$ \tiny\begin{ytableau}1&3\\2\\4\end{ytableau}, $T_3=$ \tiny\begin{ytableau}1&4\\2\\3\end{ytableau}。
+% \begin{itemize}
+%     \item \textbf{(12)}: $\text{diag}(1, -1, -1)$。
+%     \item \textbf{(23)}: 与 [3,1] 情形类似，$\rho=1/2$。涉及 $T_1, T_2$。
+%     \item \textbf{(34)}: 涉及 $T_2, T_3$。$3(1,2) \to 4(3,1)$。
+%     \item Path: Left(+1), Down(+1), Down(+1). Sum=3. $\rho=1/3$。
+% \end{itemize}
 \noindent\textcolor{red}{\rule{\linewidth}{1pt}}
 \section*{正多边形对称群 ($D_n$)}
 \begin{itemize}
@@ -1463,45 +1463,45 @@ $T_1=$ \tiny\begin{ytableau}1&2\\3\\4\end{ytableau}, $T_2=$ \tiny\begin{ytableau
   \item \textbf{转动下的变换}：$Y_{jm}(R^{-1}(\theta,\varphi))=\sum_{m'} \mathcal R^{SO(3)}_j(R)_{mm'}\,Y_{jm'}(\theta,\varphi)$（Wigner矩阵元）。
 \end{itemize}
 
-\section*{氢原子简并与 $SO(4)$（结论式）}
-\begin{itemize}
-  \item \textbf{额外对称性}：库仑势情形具有$SO(4)$对称性（除$SO(3)$角动量外还有Runge--Lenz型守恒量）。
-  \item \textbf{群同构}：$SO(4)\simeq (SU(2)\times SU(2))/\mathbb{Z}_2^{\mathrm{diag}}$，且$SO(3)\times SO(3)=SO(4)/\mathbb{Z}_2$。
-  \item \textbf{能级表示与简并度}：第$n$能级可视为$SO(4)$的不可约表示$(J,J)$（$J=\frac{n-1}{2}$），其维数为$(2J+1)^2=n^2$；并有$\mathcal R_J\otimes\mathcal R_J\simeq \bigoplus_{j=0}^{2J}\mathcal R_j=\bigoplus_{j=0}^{n-1}\mathcal R_j$，从而$\sum_{j=0}^{n-1}(2j+1)=n^2$。
-\end{itemize}
+% \section*{氢原子简并与 $SO(4)$（结论式）}
+% \begin{itemize}
+%   \item \textbf{额外对称性}：库仑势情形具有$SO(4)$对称性（除$SO(3)$角动量外还有Runge--Lenz型守恒量）。
+%   \item \textbf{群同构}：$SO(4)\simeq (SU(2)\times SU(2))/\mathbb{Z}_2^{\mathrm{diag}}$，且$SO(3)\times SO(3)=SO(4)/\mathbb{Z}_2$。
+%   \item \textbf{能级表示与简并度}：第$n$能级可视为$SO(4)$的不可约表示$(J,J)$（$J=\frac{n-1}{2}$），其维数为$(2J+1)^2=n^2$；并有$\mathcal R_J\otimes\mathcal R_J\simeq \bigoplus_{j=0}^{2J}\mathcal R_j=\bigoplus_{j=0}^{n-1}\mathcal R_j$，从而$\sum_{j=0}^{n-1}(2j+1)=n^2$。
+% \end{itemize}
 
-\section*{张量积含平凡表示的判据（$SU(2)$）}
-\begin{itemize}
-  \item \textbf{判据}：由$\mathcal R_{j_1}\otimes\mathcal R_{j_2}\simeq\bigoplus_{j=|j_1-j_2|}^{j_1+j_2}\mathcal R_j$知，张量积包含平凡表示$\mathcal R_0$当且仅当$j_1=j_2$。
-\end{itemize}
+% \section*{张量积含平凡表示的判据（$SU(2)$）}
+% \begin{itemize}
+%   \item \textbf{判据}：由$\mathcal R_{j_1}\otimes\mathcal R_{j_2}\simeq\bigoplus_{j=|j_1-j_2|}^{j_1+j_2}\mathcal R_j$知，张量积包含平凡表示$\mathcal R_0$当且仅当$j_1=j_2$。
+% \end{itemize}
 
-\section*{$SU(2)$ 特征标的 $q$-维度与 root of unity}
-\begin{itemize}
-  \item \textbf{$q$-维度}：令$q:=e^{i\omega}$，则$\chi_j(\omega)=\frac{\sin((j+\tfrac12)\omega)}{\sin(\tfrac{\omega}{2})}=\frac{q^{\frac{2j+1}{2}}-q^{-\frac{2j+1}{2}}}{q^{\frac12}-q^{-\frac12}}=: \dim_q\mathcal R_j$，且$q\to1$时$\dim_q\mathcal R_j\to \dim\mathcal R_j=2j+1$。
-  \item \textbf{level $k$ 与 root of unity}：取$\omega_k:=\frac{2\pi}{k+2}$（$k\in\mathbb{N}_{>0}$），则$q=e^{i\omega_k}=e^{\frac{2\pi i}{k+2}}$为$(k+2)$次单位根，并有$\chi_j(\omega_k)=\frac{\sin\frac{(2j+1)\pi}{k+2}}{\sin\frac{\pi}{k+2}}$。
-\end{itemize}
+% \section*{$SU(2)$ 特征标的 $q$-维度与 root of unity}
+% \begin{itemize}
+%   \item \textbf{$q$-维度}：令$q:=e^{i\omega}$，则$\chi_j(\omega)=\frac{\sin((j+\tfrac12)\omega)}{\sin(\tfrac{\omega}{2})}=\frac{q^{\frac{2j+1}{2}}-q^{-\frac{2j+1}{2}}}{q^{\frac12}-q^{-\frac12}}=: \dim_q\mathcal R_j$，且$q\to1$时$\dim_q\mathcal R_j\to \dim\mathcal R_j=2j+1$。
+%   \item \textbf{level $k$ 与 root of unity}：取$\omega_k:=\frac{2\pi}{k+2}$（$k\in\mathbb{N}_{>0}$），则$q=e^{i\omega_k}=e^{\frac{2\pi i}{k+2}}$为$(k+2)$次单位根，并有$\chi_j(\omega_k)=\frac{\sin\frac{(2j+1)\pi}{k+2}}{\sin\frac{\pi}{k+2}}$。
+% \end{itemize}
 
-\section*{root of unity 下的截断与 $SU(2)_k$ 融合（结论）}
-\begin{itemize}
-  \item \textbf{特征标截断（定理）}：在$\omega=\omega_k$处，$\chi_{j_1}(\omega_k)\chi_{j_2}(\omega_k)=\sum_{j=|j_1-j_2|}^{\min(j_1+j_2,\ k-j_1-j_2)} \chi_j(\omega_k)$（此处用$N_{j_1j_2}^j=1$的选择定则）。
-  \item \textbf{融合规则（定义）}：定义$SU(2)_k$ WZW 的“融合”$\mathcal R_{j_1}\times \mathcal R_{j_2}:=\bigoplus_{j=|j_1-j_2|}^{\min(j_1+j_2,\ k-j_1-j_2)} \mathcal R_j$，对应融合系数$\mathcal N_{j_1j_2}^{j_3}\in\{0,1\}$，且自旋仅允许$j\in\{0,\tfrac12,\dots,\tfrac{k}{2}\}$。
-  \item \textbf{性质}：$\mathcal N_{j_1j_2}^{j_3}=\mathcal N_{j_2j_1}^{j_3}=\mathcal N_{j_1j_3}^{j_2}$，并满足结合律$\sum_{j'}\mathcal N_{j_1j_2}^{j'}\mathcal N_{j'j_3}^{j_4}=\sum_{j'}\mathcal N_{j_2j_3}^{j'}\mathcal N_{j'j_1}^{j_4}$（求和$0\le j'\le k/2$）。
-  \item \textbf{量子维度（记号）}：$d_j:=\dim_q\mathcal R_j\big|_{q=e^{\frac{2\pi i}{k+2}}}=\chi_j(\omega_k)$。
-\end{itemize}
+% \section*{root of unity 下的截断与 $SU(2)_k$ 融合（结论）}
+% \begin{itemize}
+%   \item \textbf{特征标截断（定理）}：在$\omega=\omega_k$处，$\chi_{j_1}(\omega_k)\chi_{j_2}(\omega_k)=\sum_{j=|j_1-j_2|}^{\min(j_1+j_2,\ k-j_1-j_2)} \chi_j(\omega_k)$（此处用$N_{j_1j_2}^j=1$的选择定则）。
+%   \item \textbf{融合规则（定义）}：定义$SU(2)_k$ WZW 的“融合”$\mathcal R_{j_1}\times \mathcal R_{j_2}:=\bigoplus_{j=|j_1-j_2|}^{\min(j_1+j_2,\ k-j_1-j_2)} \mathcal R_j$，对应融合系数$\mathcal N_{j_1j_2}^{j_3}\in\{0,1\}$，且自旋仅允许$j\in\{0,\tfrac12,\dots,\tfrac{k}{2}\}$。
+%   \item \textbf{性质}：$\mathcal N_{j_1j_2}^{j_3}=\mathcal N_{j_2j_1}^{j_3}=\mathcal N_{j_1j_3}^{j_2}$，并满足结合律$\sum_{j'}\mathcal N_{j_1j_2}^{j'}\mathcal N_{j'j_3}^{j_4}=\sum_{j'}\mathcal N_{j_2j_3}^{j'}\mathcal N_{j'j_1}^{j_4}$（求和$0\le j'\le k/2$）。
+%   \item \textbf{量子维度（记号）}：$d_j:=\dim_q\mathcal R_j\big|_{q=e^{\frac{2\pi i}{k+2}}}=\chi_j(\omega_k)$。
+% \end{itemize}
 
-\section*{$S$-矩阵与 Verlinde 公式（记号）}
-\begin{itemize}
-  \item \textbf{$S$-矩阵}：$S_{j_1}^{\,j_2}:=\sqrt{\frac{2}{k+2}}\sin\!\Big(\frac{\pi}{k+2}(2j_1+1)(2j_2+1)\Big)$，并有$\chi_{j_1}\!\big(\frac{2\pi}{k+2}(2j_2+1)\big)=\frac{S_{j_1}^{\,j_2}}{S_{0}^{\,j_2}}$。
-  \item \textbf{Verlinde 公式}：$\mathcal N_{j_1j_2}^{j_3}=\sum_{j=0/2}^{k/2}\frac{S_{j_1}^{\,j}\,S_{j_2}^{\,j}\,(S^{-1})_{j}^{\,j_3}}{S_{0}^{\,j}}$。
-  \item \textbf{本征值/对角化}：视$(\mathcal N_{j_1})_{j_2}^{j_3}:=\mathcal N_{j_1j_2}^{j_3}$为矩阵，则其本征值可写为$\frac{S_{j_1}^{\,j}}{S_0^{\,j}}=\chi_{j_1}\!\big(\frac{2\pi}{k+2}(2j+1)\big)$。
-\end{itemize}
+% \section*{$S$-矩阵与 Verlinde 公式（记号）}
+% \begin{itemize}
+%   \item \textbf{$S$-矩阵}：$S_{j_1}^{\,j_2}:=\sqrt{\frac{2}{k+2}}\sin\!\Big(\frac{\pi}{k+2}(2j_1+1)(2j_2+1)\Big)$，并有$\chi_{j_1}\!\big(\frac{2\pi}{k+2}(2j_2+1)\big)=\frac{S_{j_1}^{\,j_2}}{S_{0}^{\,j_2}}$。
+%   \item \textbf{Verlinde 公式}：$\mathcal N_{j_1j_2}^{j_3}=\sum_{j=0/2}^{k/2}\frac{S_{j_1}^{\,j}\,S_{j_2}^{\,j}\,(S^{-1})_{j}^{\,j_3}}{S_{0}^{\,j}}$。
+%   \item \textbf{本征值/对角化}：视$(\mathcal N_{j_1})_{j_2}^{j_3}:=\mathcal N_{j_1j_2}^{j_3}$为矩阵，则其本征值可写为$\frac{S_{j_1}^{\,j}}{S_0^{\,j}}=\chi_{j_1}\!\big(\frac{2\pi}{k+2}(2j+1)\big)$。
+% \end{itemize}
 
-\section*{$SU(2)$ Chern--Simons 与 Wilson loop（记号）}
-\begin{itemize}
-  \item \textbf{作用量（level $k$）}：$S=\frac{k}{4\pi}\int_M \mathrm{tr}\!\left(A\,dA+\frac{2}{3}A^3\right)$（$k\in\mathbb{N}$），$Z=\int[DA]\,e^{iS}$（与度规无关的TQFT量）。
-  \item \textbf{Wilson loop}：$\big\langle\prod_i W_{j_i}(C_i)\big\rangle:=\frac{1}{Z}\int[DA]\,e^{iS}\prod_i \mathrm{tr}\,\mathcal P\exp\!\left(\oint_{C_i}A\right)$。
-  \item \textbf{$S^3$ 上结果（结论）}：$Z=S_0^{\,0}$，且一类圈结（unknot）满足$\langle W_j\rangle=\frac{S_0^{\,j}}{S_0^{\,0}}=\chi_j(\omega_k)=d_j$（$\omega_k=\frac{2\pi}{k+2}$）。
-\end{itemize}
+% \section*{$SU(2)$ Chern--Simons 与 Wilson loop（记号）}
+% \begin{itemize}
+%   \item \textbf{作用量（level $k$）}：$S=\frac{k}{4\pi}\int_M \mathrm{tr}\!\left(A\,dA+\frac{2}{3}A^3\right)$（$k\in\mathbb{N}$），$Z=\int[DA]\,e^{iS}$（与度规无关的TQFT量）。
+%   \item \textbf{Wilson loop}：$\big\langle\prod_i W_{j_i}(C_i)\big\rangle:=\frac{1}{Z}\int[DA]\,e^{iS}\prod_i \mathrm{tr}\,\mathcal P\exp\!\left(\oint_{C_i}A\right)$。
+%   \item \textbf{$S^3$ 上结果（结论）}：$Z=S_0^{\,0}$，且一类圈结（unknot）满足$\langle W_j\rangle=\frac{S_0^{\,j}}{S_0^{\,0}}=\chi_j(\omega_k)=d_j$（$\omega_k=\frac{2\pi}{k+2}$）。
+% \end{itemize}
 
 \section*{$SU(2)$ 不可约表示与杨图（结论）}
 \begin{itemize}
