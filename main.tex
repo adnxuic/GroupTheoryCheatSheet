@@ -1,4 +1,4 @@
-% 群论小抄模板
+﻿% 群论小抄模板
 % 编译方式：XeLaTeX
 
 \documentclass[landscape]{article}
@@ -81,16 +81,18 @@
 \end{itemize}
 $n$阶\textbf{置换群} $S_n$, 又称$n$阶\textbf{对称群}。
 将$n$个元素的集合 $X=\{1, 2, \cdots, n\}$ 映为自身的置换为
-\[
+\\
+$
 P = \begin{pmatrix} 
 1 & 2 & \cdots & n \\ 
 m_1 & m_2 & \cdots & m_n 
 \end{pmatrix},
-\]
+$
 其中 $m_1 m_2 \cdots m_n$ 是 $1, 2, \cdots, n$ 的任意排列, 
 $P$ 表示把 1 映为 $m_1$, $n$ 映为 $m_n$ 的映射.。
 显然置换只与每列的相对符号有关, 与第一行符号的顺序无关, 如
-\[
+\\
+$
 \begin{pmatrix} 
 1 & 2 & 3 & 4 \\ 
 4 & 2 & 1 & 3 
@@ -100,10 +102,11 @@ $P$ 表示把 1 映为 $m_1$, $n$ 映为 $m_n$ 的映射.。
 4 & 2 & 3 & 1 \\ 
 3 & 2 & 1 & 4 
 \end{pmatrix}.
-\]
+$
 
 \noindent 定义两个置换 $P'$ 和 $P$ 的乘积 $P'P$, 为先实行置换 $P$, 再实行置换 $P'$, 如
-\[
+\\
+$
 \begin{pmatrix} 
 1 & 2 & 3 \\ 
 2 & 1 & 3 
@@ -117,7 +120,7 @@ $P$ 表示把 1 映为 $m_1$, $n$ 映为 $m_n$ 的映射.。
 1 & 2 & 3 \\ 
 3 & 1 & 2 
 \end{pmatrix}.
-\]
+$
 容易看出在这乘法定义下, 全部 $n$ 阶置换构成 $S_n$ 群. $S_n$ 群共有 $n!$ 个元素
 
 $D_3$ 群元素定义：$e$(单位元), $a$(关于轴 1 反射), 
@@ -401,9 +404,10 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{从不变子空间读出表示矩阵}
 \begin{itemize}
   \item 若$W$是表示空间中一个$G$不变子空间，取基$(\psi_1,\dots,\psi_m)$，则对任意$g\in G$有展开
-  \[
+  \\
+  $
   A(g)\psi_i=\sum_{j=1}^m \psi_j\,A_{ji}(g),
-  \]
+  $
   从而得到矩阵表示$A(g)=(A_{ji}(g))\in GL(m,\mathbb{C})$。
   \item 同态性对应矩阵乘法：$A(g_1g_2)=A(g_1)A(g_2)$。
 \end{itemize}
@@ -411,9 +415,10 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{等价表示（相似变换）}
 \begin{itemize}
   \item \textbf{定义2.6}：若$A$是$G$在$V$上的表示，$X$为可逆线性变换，则
-  \[
+  \\
+  $
   A'(g)=XA(g)X^{-1}
-  \]
+  $
   也是表示，称$A'$与$A$等价（equivalent）。
   \item 等价表示维数相同；维数相同的表示未必等价。
   \item 相似变换本质是更换表示空间的基。
@@ -423,15 +428,17 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \begin{itemize}
   \item \textbf{（可约）}：表示$A$在$V$上若存在$G$不变的真子空间$W$（$0\neq W\neq V$），则$A$可约；否则不可约。
   \item \textbf{矩阵判别（可约）}：$A$可约$\Leftrightarrow$存在等价表示使全部$A(g)$在同一基下呈共同的块上（三）角形式
-  \[
+  \\
+  $
   A(g)=\begin{pmatrix} C(g)&N(g)\\ 0&B(g)\end{pmatrix}.
-  \]
+  $
   \item \textbf{直和}：$V=W\oplus W'$指$V=W+W'$且$W\cap W'=\{0\}$；任意$x\in V$可唯一写为$x=y+z$（$y\in W,z\in W'$）。
   \item \textbf{（完全可约）}：若$V=W\oplus W'$且$W,W'$均为$G$不变子空间，则$A$完全可约（是可约的特殊情形）。
   \item \textbf{矩阵判别（完全可约）}：存在等价表示使全部$A(g)$共同块对角化
-  \[
+  \\
+  $
   A(g)=C(g)\oplus B(g)=\begin{pmatrix} C(g)&0\\ 0&B(g)\end{pmatrix},
-  \]
+  $
   即表示可写为直和（可包含重数）。{\color{red}一个完全可约表示可写为多个不可约表示的直和}，如果其中某些
   不可约表示有重复，还可以用其倍数来表示。
   \item \textbf{不可约}：表示空间不存在$G$不变的真子空间。
@@ -470,14 +477,16 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{群空间与群代数}
 \begin{itemize}
   \item \textbf{群空间}：取复数域$\mathbb{C}$与群$G=\{g_\alpha\}$，令
-  \[
+  \\
+  $
   V_G=\left\{x=\sum_{\alpha} x_{\alpha}g_{\alpha}\mid x_\alpha\in\mathbb{C}\right\},
-  \]
+  $
   并定义$(x+y)=\sum_\alpha(x_\alpha+y_\alpha)g_\alpha,\ a x=\sum_\alpha(ax_\alpha)g_\alpha$，则$V_G$为线性空间，$\{g_\alpha\}$为自然基。
   \item \textbf{群代数}：若$g_\alpha g_\beta=g_\gamma$，对$x=\sum_\alpha x_\alpha g_\alpha,\ y=\sum_\beta y_\beta g_\beta$定义乘法
-  \[
+  \\
+  $
   xy=\sum_{\alpha,\beta} x_\alpha y_\beta (g_\alpha g_\beta)\in V_G,
-  \]
+  $
   该乘法与加法/数乘满足分配与结合，从而$V_G$成为$G$的结合代数（群代数）。
 \end{itemize}
 
@@ -495,9 +504,10 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \begin{itemize}
   \item \textbf{定理（有限群表示等价于幺正表示）}：若$G$为有限群，$A$为$G$在有限维内积空间$V$上的表示，则存在等价表示$A'(g)=X A(g) X^{-1}$使$A'$为幺正表示。
   \item \textbf{方法（平均内积）}：在原内积$(\cdot|\cdot)$下定义新内积
-  \[
+  \\
+  $
   \langle x|y\rangle=\frac{1}{|G|}\sum_{g\in G} (A(g)x\,|\,A(g)y),
-  \]
+  $
   则$A(g)$在$\langle\cdot|\cdot\rangle$下成为幺正变换。
   \item \textbf{推论}：{\color{red}有限群在内积空间的表示若可约则必完全可约}。
 \end{itemize}
@@ -505,9 +515,10 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{Schur 引理（一）}
 \begin{itemize}
   \item 设$A,B$分别为群$G$的$n_A$维、$n_B$维不可约表示。若存在矩阵$M$满足
-  \[
+  \\
+  $
   A(g)M=MB(g)\quad (\forall g\in G),
-  \]
+  $
   则：（i）若$A,B$不等价，则$M=0$；（ii）若$M\neq0$，则$A,B$等价。
   \item \textbf{推论}：若$M\neq0$，则$M$为同构（可逆），且$n_A=n_B$。
 \end{itemize}
@@ -515,9 +526,10 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{Schur 引理（二）}
 \begin{itemize}
   \item 设$A$为群$G$的有限维\textbf{不可约复表示}。若矩阵$M$与所有$A(g)$对易：
-  \[
+  \\
+  $
   A(g)M=MA(g)\quad (\forall g\in G),
-  \]
+  $
   则$M=\lambda I$（$\lambda\in\mathbb{C}$）。
   \item \textbf{备注}：该结论依赖“复表示/代数闭域”；对\textbf{实}不可约表示不一定成立。
 \end{itemize}
@@ -527,18 +539,20 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
   \item \textbf{对应}：群代数（群空间）$V_G$中向量$x=\sum_i x_i g_i$可视为群函数$x(g_i)\equiv x_i$；反之给定函数值$x(g_i)$即可确定$x=\sum_i x(g_i)g_i$。
   \item \textbf{数乘/加法}：$(ax)(g_i)=a\,x(g_i)$；$(x+y)(g_i)=x(g_i)+y(g_i)$。
   \item \textbf{乘法（卷积型）}：
-  \[
+  \\
+  $
   (xy)(g_i)=\sum_j x(g_j)\,y(g_j^{-1}g_i).
-  \]
+  $
   \item \textbf{一组基函数}：可取$n=|G|$个函数$g_i(\,g_j\,)=\delta_{ij}$作为群函数空间的基（对应群代数的自然基$g_i$）。
 \end{itemize}
 
 \section*{群函数的内积与正则表示}
 \begin{itemize}
   \item 设$G=\{g_i\}$为$n$阶有限群。定义群函数内积
-  \[
+  \\
+  $
   \langle x|y\rangle=\frac{1}{n}\sum_{i=1}^{n} x(g_i)^{*}\,y(g_i).
-  \]
+  $
   \item 特别地，对$\delta$基函数有$\langle g_i|g_j\rangle=\frac{1}{n}\delta_{ij}$，是正交完备的。
   \item 在该内积下，左正则表示$L(g)$为幺正：$\langle L(g)x|L(g)y\rangle=\langle x|y\rangle$。
   \item 若$A^{(r)}$为$n_r$维表示，则其矩阵元函数$A^{(r)}_{\mu\nu}(g_i)$（$\mu,\nu=1,\dots,n_r$）都是群函数；共$n_r^2$个。
@@ -547,10 +561,11 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{正交性定理（矩阵元）}
 \begin{itemize}
   \item 设$\{A^{(p)}\}$为有限群$G$的一组不等价不可约（幺正）表示，维数为$n_p$，则
-  \[
+  \\
+  $
   \sum_{i=1}^{n}\left[A^{(p)}_{\mu\nu}(g_i)\right]^{*}A^{(r)}_{\mu'\nu'}(g_i)
   =\frac{n}{n_p}\,\delta_{pr}\delta_{\mu\mu'}\delta_{\nu\nu'}.
-  \]
+  $
   \item 等价写法（用上面的内积）：$\langle A^{(p)}_{\mu\nu}\,|\,A^{(r)}_{\mu'\nu'}\rangle=\frac{1}{n_p}\delta_{pr}\delta_{\mu\mu'}\delta_{\nu\nu'}$。
 \end{itemize}
 
@@ -558,13 +573,15 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \begin{itemize}
   \item \textbf{完备性定理}：有限群$G$的全部不等价不可约（幺正）表示的矩阵元群函数$A^{(r)}_{\mu\nu}(g_i)$在群函数空间中构成完备系；任意群函数可关于它们展开。
   \item \textbf{推论1（Burnside）}：设不等价不可约表示维数为$n_r$，则
-  \[
+  \\
+  $
   \sum_r n_r^{2}=|G|.
-  \]
+  $
   \item \textbf{推论2（正则表示的约化）}：正则表示可完全约化为所有不等价不可约表示的直和，且每个不可约表示出现次数等于其维数：
-  \[
+  \\
+  $
   \mathrm{Reg}\ \cong\ \bigoplus_{r} n_r\,A^{(r)}.
-  \]
+  $
 \end{itemize}
 \noindent\textcolor{red}{\rule{\linewidth}{1pt}}
 \section*{特征标（Character）}
@@ -577,28 +594,32 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{特征标的第一正交关系}
 \begin{itemize}
   \item 设$G$为$n$阶有限群，$\{\chi^{(r)}\}$为不等价不可约表示的特征标，则
-  \[
+  \\
+  $
   \left\langle \chi^{(p)}\mid \chi^{(r)} \right\rangle
   \equiv \frac{1}{n}\sum_{g\in G}\big(\chi^{(p)}(g)\big)^{*}\chi^{(r)}(g)=\delta_{pr}.
-  \]
+  $
   \item 按共轭类求和：若$G$有共轭类$K_i$，大小$|K_i|=n_i$，则
-  \[
+  \\
+  $
   \frac{1}{n}\sum_{i} n_i\,\big(\chi^{(p)}(K_i)\big)^{*}\chi^{(r)}(K_i)=\delta_{pr}.
-  \]
+  $
   \item 特别地，$\langle\chi^{(r)}|\chi^{(r)}\rangle=1$（不可约特征标的“范数”）。
 \end{itemize}
 
 \section*{用特征标判断可约性与重数}
 \begin{itemize}
   \item 若表示$A$完全可约分解为$A\simeq \bigoplus_{p} m_p A^{(p)}$，则
-  \[
+  \\
+  $
   m_p=\left\langle \chi^{(p)}\mid \chi^{(A)} \right\rangle.
-  \]
+  $
   \item \textbf{判别}：$\langle\chi^{(A)}|\chi^{(A)}\rangle=\sum_p m_p^2$；因此
-  \[
+  \\
+  $
   \langle\chi^{(A)}|\chi^{(A)}\rangle=1 \Rightarrow A\ \text{不可约},\qquad
   \langle\chi^{(A)}|\chi^{(A)}\rangle>1 \Rightarrow A\ \text{可约}.
-  \]
+  $
 \end{itemize}
 
 \section*{类函数与特征标完备性}
@@ -612,9 +633,10 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{特征标的第二正交关系}
 \begin{itemize}
   \item 设$G$为$n$阶有限群，有共轭类$K_i$（大小$|K_i|=n_i$），则
-  \[
+  \\
+  $
   \sum_{r}\big(\chi^{(r)}(K_i)\big)^{*}\chi^{(r)}(K_j)=\frac{n}{n_i}\,\delta_{ij}.
-  \]
+  $
 \end{itemize}
 \noindent\textcolor{red}{\rule{\linewidth}{1pt}}
 \section*{特征标表（Character Table）}
@@ -643,15 +665,17 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{置换的定义与表示}
 \begin{itemize}
   \item \textbf{定义}：将$n$个物体（标记为$1,2,\dots,n$）的一个置换操作记为：
-  \[
+  \\
+  $
   P=\begin{pmatrix} 1 & 2 & \cdots & n \\ m_1 & m_2 & \cdots & m_n \end{pmatrix}
-  \]
+  $
   其中$m_1,\dots,m_n$是$1,\dots,n$的某种排列。表示$1\to m_1,\ 2\to m_2,\ \dots,\ n\to m_n$。
   \item \textbf{列无关性}：置换$P$中各列的相对位置变化不会改变该映射。
   \item \textbf{逆置换}：$P$的逆$P^{-1}$为
-  \[
+  \\
+  $
   P^{-1}=\begin{pmatrix} m_1 & m_2 & \cdots & m_n \\ 1 & 2 & \cdots & n \end{pmatrix}
-  \]
+  $
   即交换上下行后重新排列列顺序。
 \end{itemize}
 
@@ -667,9 +691,10 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{轮换 (Cycle)}
 \begin{itemize}
   \item \textbf{定义}：$m$个物体$a_1, a_2, \dots, a_m$的如下置换称为一个\textbf{轮换}：
-  \[
+  \\
+  $
   \begin{pmatrix} a_1 & a_2 & \cdots & a_m \\ a_2 & a_3 & \cdots & a_1 \end{pmatrix} \equiv (a_1 a_2 \cdots a_m)
-  \]
+  $
   \item \textbf{映射关系}：定义了一个循环映射 $a_1 \to a_2 \to a_3 \to \cdots \to a_m \to a_1$。
   \item \textbf{长度}：$m$称为这个轮换的长度。
   \item \textbf{轮换的逆}：$(a_1 a_2 \cdots a_m)^{-1} = (a_m a_{m-1} \cdots a_1)$。
@@ -680,11 +705,12 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
   \item \textbf{轮换分解定理}：{\color{red}任意置换都可\textbf{唯一}地表达为\textbf{不含公共数字}（不相交）的轮换的乘积。}
   \item \textbf{轮换结构}：该表达方式称为置换的轮换结构，由轮换的\textbf{长度}和\textbf{个数}决定。
   \item \textbf{可交换性}：两个不相交的轮换是\textbf{可交换}的。
-  \[ \text{例：} (1\,4)(2\,3\,5) = (2\,3\,5)(1\,4) \]
+  \\ $ \text{例：} (1\,4)(2\,3\,5) = (2\,3\,5)(1\,4) $
   \item \textbf{矩阵转轮换示例}：
-  \[
+  \\
+  $
   \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 4 & 3 & 5 & 1 & 2 \end{pmatrix} = (1\,4)(2\,3\,5)
-  \]
+  $
 \end{itemize}
 
 \section*{对换与生成元}
@@ -699,7 +725,7 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
   \item \textbf{引理2}：$(a_1, a_2 \cdots a_m) = (a_1, a_2)(a_2, a_3 \cdots a_m)$
   \item \textbf{邻换 (Adjacent Transposition)}：相邻数字的对换$(k, k+1)$。
   \item \textbf{任意对换的分解}：{\color{red}任意对换都可写成邻换的乘积}。
-  \[ (1\,3) = (2\,3)(1\,2)(2\,3) \]
+  \\ $ (1\,3) = (2\,3)(1\,2)(2\,3) $
   \item \textbf{群的生成}：
   \begin{enumerate}
       \item 任意置换可由对换生成；
@@ -713,7 +739,7 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
   \item \textbf{唯一性 (性质4)}：{\color{red}尽管对换分解形式不唯一，但分解出的对换个数的奇偶性是唯一确定}的。
   \item \textbf{逆元性质 (性质5)}：{\color{red}任意置换$P$和它的逆$P^{-1}$具有相同的奇偶性}。
   \item \textbf{关系}：
-  \[ \text{偶} \times \text{偶} = \text{偶}, \quad \text{奇} \times \text{奇} = \text{偶}, \quad \text{奇} \times \text{偶} = \text{奇} \]
+  \\ $ \text{偶} \times \text{偶} = \text{偶}, \quad \text{奇} \times \text{奇} = \text{偶}, \quad \text{奇} \times \text{偶} = \text{奇} $
 \end{itemize}
 
 \section*{实例：$S_3$ 群结构}
@@ -725,8 +751,8 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
       \item 奇置换 (反射)：$a=(12)$, $b=(23)$, $c=(13)$
   \end{itemize}
   \item \textbf{乘法示例}（右乘优先）：
-  \[ (1\,2\,3)(1\,2) = (1\,3) \quad (\text{即 } da=c) \]
-  \[ (1\,2\,3)(2\,3) = (1\,2) \quad (\text{即 } db=a) \]
+  \\ $ (1\,2\,3)(1\,2) = (1\,3) \quad (\text{即 } da=c) $
+  \\ $ (1\,2\,3)(2\,3) = (1\,2) \quad (\text{即 } db=a) $
   \item \textbf{生成元}：$S_3$可由两个邻换$(1\,2)$和$(2\,3)$生成。
 \end{itemize}
 \section*{置换的共轭}
@@ -750,9 +776,10 @@ $H_4$ 是自共轭子群（不变子群/正规子群），即 $g^{-1}H_4 g = H_4
 \section*{共轭类元素个数公式}
 \begin{itemize}
   \item 对于轮换结构 $(\nu)=(1^{\nu_1}, 2^{\nu_2}, \cdots, n^{\nu_n})$，该共轭类包含的元素数目 $\rho_{(\nu)}$ 为：
-  \[
+  \\
+  $
   \rho_{(\nu)} = \frac{n!}{1^{\nu_1}\nu_1! \, 2^{\nu_2}\nu_2! \, \cdots \, n^{\nu_n}\nu_n!} = \frac{n!}{\prod_{k=1}^n k^{\nu_k} \nu_k!}
-  \]
+  $
   \item \textbf{例子 ($S_6$)}：
   \begin{itemize}
       \item 结构 $(******)$ 即 $(6^1)$：$\frac{6!}{6^1 1!} = 120$。
@@ -874,9 +901,9 @@ $S_4$ 群的共轭类由 4 的分划 $[\lambda]$ 决定，共有 5 种情况。
 \begin{itemize}
     \item \textbf{定理}：$S_n$ 群杨图 $[\lambda]$ 对应的不可约表示的维数 $d_{[\lambda]}$，等于该杨图的标准杨盘数目 $f^{[\lambda]}$。
     \item \textbf{钩长 (Hook Length)}：杨图第 $i$ 行第 $j$ 列方格的钩长 $g_{ij}$ 定义为：
-    \[ g_{ij} = (\text{右边方格数}) + (\text{下边方格数}) + 1 \]
+    \\ $ g_{ij} = (\text{右边方格数}) + (\text{下边方格数}) + 1 $
     \item \textbf{钩长公式}：
-    \[ f^{[\lambda]} = \frac{n!}{\prod_{(i,j)} g_{ij}} \]
+    \\ $ f^{[\lambda]} = \frac{n!}{\prod_{(i,j)} g_{ij}} $
 \end{itemize}
 
 \section*{实例：$S_3$ 不可约表示维数}
@@ -966,10 +993,10 @@ $S_3$ 阶数为 $3!=6$。计算各杨图钩长（填入格中）及维数：
 \begin{itemize}
     \item 杨盘 $T_1 =$ \tiny\begin{ytableau}1 & 2 \\ 3\end{ytableau}，$T_2 =$ \tiny\begin{ytableau}1 & 3 \\ 2\end{ytableau}。
     \item 对于 $T_1$：$P(T_1)=1+(12),\ Q(T_1)=1-(13)$。
-    \[ E(T_1) = [1+(12)][1-(13)] = 1+(12)-(13)-(123) \]
+    \\ $ E(T_1) = [1+(12)][1-(13)] = 1+(12)-(13)-(123) $
     基函数 $\Psi_1 = E(T_1)\psi(1,2,3)$。
     \item 对于 $T_2$：$P(T_2)=1+(13),\ Q(T_2)=1-(12)$。
-    \[ E(T_2) = [1+(13)][1-(12)] = 1+(13)-(12)-(132) \]
+    \\ $ E(T_2) = [1+(13)][1-(12)] = 1+(13)-(12)-(132) $
     基函数 $\Psi_2 = E(T_2)\psi_2$，其中 $\psi_2=(23)\psi(1,2,3)$。
     \item $\{\Psi_1, \Psi_2\}$ 构成 $S_3$ 群 2 维不可约表示的一组基。
 \end{itemize}
@@ -980,15 +1007,17 @@ $S_3$ 阶数为 $3!=6$。计算各杨图钩长（填入格中）及维数：
 利用前述基函数 $\Psi_1, \Psi_2$，考察群元素的作用：
 \begin{itemize}
     \item \textbf{生成元 (12)}：
-    \[
+    \\
+    $
     \begin{cases} (12)\Psi_1 = \Psi_1 \\ (12)\Psi_2 = -\Psi_1 - \Psi_2 \end{cases}
     \implies A(12) = \begin{pmatrix} 1 & -1 \\ 0 & -1 \end{pmatrix}
-    \]
+    $
     \item \textbf{生成元 (13)}：
-    \[
+    \\
+    $
     \begin{cases} (13)\Psi_1 = -\Psi_1 - \Psi_2 \\ (13)\Psi_2 = \Psi_2 \end{cases}
     \implies A(13) = \begin{pmatrix} -1 & 0 \\ -1 & 1 \end{pmatrix}
-    \]
+    $
     \item \textbf{其他元素}（通过矩阵乘法生成）：
     \begin{align*}
     A(123) &= A(13)A(12) = \begin{pmatrix} -1 & 1 \\ -1 & 0 \end{pmatrix} \\
@@ -1020,14 +1049,15 @@ $S_3$ 群 2 维不可约表示 [2,1] 的所有矩阵：
     \item $\chi((12)) = 1-1 = 0$ （同类元素 $(13), (23)$ 相同）
 \end{itemize}
 计算特征标模长平方：
-\[
+\\
+$
 \langle \chi | \chi \rangle = \frac{1}{6} \left[ 1 \cdot (2)^2 + 2 \cdot (-1)^2 + 3 \cdot (0)^2 \right] = \frac{1}{6}(4+2) = 1
-\]
+$
 因为 $\langle \chi | \chi \rangle = 1$，故该表示是\textbf{不可约}的。
 
 \section*{表示的幺正化}
 上述表示\textbf{不是}幺正表示。例如验证 $A(12)$：
-\[ A(12) A(12)^\dagger = \begin{pmatrix} 1 & -1 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ -1 & -1 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix} \neq I \]
+\\ $ A(12) A(12)^\dagger = \begin{pmatrix} 1 & -1 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ -1 & -1 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix} \neq I $
 \textbf{幺正化步骤}：
 \begin{enumerate}
     \item \textbf{构造厄米矩阵 $S$}：
@@ -1038,7 +1068,7 @@ $S_3$ 群 2 维不可约表示 [2,1] 的所有矩阵：
     \end{align*}
     \item \textbf{求 $S$ 的平方根 $X = S^{1/2}$}：
     对角化 $S$ 得本征值 $12, 4$。计算得：
-    \[ X = \begin{pmatrix} \frac{1+\sqrt{3}}{2} & \frac{1-\sqrt{3}}{2} \\ \frac{1-\sqrt{3}}{2} & \frac{1+\sqrt{3}}{2} \end{pmatrix} \]
+    \\ $ X = \begin{pmatrix} \frac{1+\sqrt{3}}{2} & \frac{1-\sqrt{3}}{2} \\ \frac{1-\sqrt{3}}{2} & \frac{1+\sqrt{3}}{2} \end{pmatrix} $
     （此处略去中间对角化过程，仅展示结果形式）
     \item \textbf{相似变换}：
     新的表示 $A'(g) = X A(g) X^{-1}$ 即为幺正表示。
@@ -1199,9 +1229,10 @@ $S_3$ 群 2 维不可约表示 [2,1] 的所有矩阵：
   \item \textbf{几何角度}：正$n$边形内角 $\alpha = \frac{(n-2)\pi}{n}$。
   \item \textbf{立体角条件}：为构成闭合立体，顶点处棱数 $m \ge 3$，且内角和 $m\alpha < 2\pi$。
   \item \textbf{不等式判据}：
-  \[
+  \\
+  $
   3 \le m < \frac{2n}{n-2}
-  \]
+  $
   \item \textbf{推论}：$n \ge 6$ 时无解（平面或双曲），仅 $n=3,4,5$ 有解。
 \end{itemize}
 
@@ -1591,6 +1622,99 @@ $\dim = Y_1 - Y_2 + 1$
     \item \textbf{约束}：形成的新图形必须是合法杨图（$SU(2)$最多2行）；同一列不能出现相同的标号。
     \item \textbf{化简}：去掉所有高度为2的列。
 \end{enumerate}
+\noindent\textcolor{blue}{\rule{\linewidth}{1pt}}
+\section*{特殊幺正群 $SU(N)$}
+\begin{itemize}
+  \item \textbf{定义}：$N \times N$ 特殊幺正矩阵构成的群。满足 $UU^{\dagger} = U^{\dagger}U = \mathbf{1}$ 且 $\det U = 1$。
+  \item \textbf{维数}：$\dim SU(N) = N^2 - 1$（$N^2$个复变量受幺正及行列式约束）。
+  \item \textbf{子群关系}：$SU(N) < SU(M)$ ($1 < N < M$)，但非正规子群。
+  \item \textbf{商空间与几何}：$SU(N)/SU(N-1) = S^{2N-1}$。$SU(N)$ 的局部几何结构类似球面的直积：$S^{2N-1} \times S^{2N-3} \times \cdots \times S^3$。
+  \item \textbf{共轭与对角化}：任意 $U \in SU(N)$ 可通过共轭变换对角化为 $U_D = \operatorname{diag}(e^{i\varphi_1}, \dots, e^{i\varphi_N})$，其中 $\varphi_i \in \mathbb{R}$ 且 $\sum_{i=1}^N \varphi_i = 0$。共轭类由 $\varphi_1, \dots, \varphi_{N-1}$ 标记。
+  \item \textbf{李代数 $\mathfrak{su}(N)$}：由全体 $N \times N$ \textbf{无迹厄密}矩阵构成（即 $H^\dagger=H, \operatorname{tr}H=0$）。
+  \item \textbf{对易封闭性}：若 $H_1, H_2 \in \mathfrak{su}(N)$，则 $i[H_1, H_2]$ 也是无迹厄密矩阵（属于 $\mathfrak{su}(N)$）。
+  \item \textbf{指数映射}：$\forall U \in SU(N)$，存在无迹厄密矩阵 $H$ 使 $U = e^{iH}$；反之亦然。
+\end{itemize}
+\section*{$SU(N)$ 的不可约表示}
+\begin{itemize}
+  \item \textbf{基本表示 (Fundamental, $\mathbf{N}$)}：$SU(N)$ 对 $\mathbb{C}^N$ 的天然线性作用（即定义本身）。
+  \item \textbf{反基本表示 (Anti-fundamental, $\overline{\mathbf{N}}$)}：基本表示 $\mathbf{N}$ 的复共轭。
+  \item \textbf{等价性}：$N=2$ 时，$\mathbf{N} \cong \overline{\mathbf{N}}$（$\mathbf{2} \cong \overline{\mathbf{2}}$）；$N > 2$ 时，$\mathbf{N} \not\cong \overline{\mathbf{N}}$。
+  \item \textbf{伴随表示 (Adjoint)}：维数为 $N^2-1$，表示空间为李代数 $\mathfrak{su}(N)$（无迹厄密矩阵）。群作用为 $\mathcal{R}_{\text{adj}}(U)H = U^{-1}HU$。
+\end{itemize}
+
+\section*{杨图 (Young Tableaux) 标记}
+\begin{itemize}
+  \item $SU(N)$ 的任意不可约表示可用杨图 $Y$ 标记。
+  \item \textbf{规则}：行长 $Y_1 \ge Y_2 \ge \dots \ge Y_N \ge 0$；总行数不超过 $N$。
+  \item \textbf{满减规则}：因 $\det U=1$，长度为 $N$ 的列（$Y_1=\dots=Y_N=1$）对应平凡因子，可去掉不改变表示。
+  \item \textbf{共轭表示}：表示 $\mathcal{R}_Y$ 的复共轭 $\overline{\mathcal{R}_Y}$ 对应的杨图与原杨图互补成一个 $N$ 行矩形。
+  \item \textbf{例子}：$\mathbf{1}$ (空图); $\mathbf{N}$ (单框 $\Box$); $\overline{\mathbf{N}}$ ($N-1$个框竖排); \textbf{adj} ($N-1$竖排旁加一框)。
+\end{itemize}
+
+\section*{维数公式}
+\begin{itemize}
+  \item 杨图 $Y$ 对应表示的维数（Weyl 维数公式）：
+  \\
+  $\dim \mathcal{R}_Y = \frac{\prod_{1\le A<B \le N}((Y_A - Y_B) - (A - B))}{\prod_{1\le A<B \le N}(B - A)}$
+  \item $N \ge 3$ 时，存在维数相同但不等价的表示（如 $SU(3)$ 的 $\mathbf{3}$ 和 $\overline{\mathbf{3}}$）。
+\end{itemize}
+
+\section*{特征标与 Schur 函数}
+\begin{itemize}
+  \item \textbf{特征标}：$\chi_{\mathcal{R}_Y}(U) = \mathrm{tr}(\mathcal{R}_Y(U))$。对角化 $U$ 后仅依赖于特征值 $x_A = e^{i\varphi_A}$。
+  \item \textbf{Schur 函数}：$SU(N)$ 特征标等于 Schur 函数 $s_Y$：
+  \\
+  $
+  \chi_{\mathcal{R}_Y}(U_D) = s_Y(e^{i\varphi_1}, \dots, e^{i\varphi_N}) = \frac{\det[e^{i\varphi_A(Y_B + N - B)}]}{\det[e^{i\varphi_A(N - B)}]}
+  $
+  \item \textbf{Vandermonde 行列式}：分母即 $\Delta = \prod_{1\le A<B \le N} (e^{i\varphi_A} - e^{i\varphi_B})$。
+  \item \textbf{性质}：$\sum \varphi_A = 0$；$s_Y(\varphi \to 0) = \dim \mathcal{R}_Y$。
+\end{itemize}
+
+\section*{$SU(N)$ 的 Haar 测度}
+\begin{itemize}
+  \item \textbf{类函数积分}：对只依赖特征值的类函数 $f(U)=f(\varphi_1,\dots,\varphi_N)$，群积分化为 $N-1$ 重积分：
+  \\
+  $
+  \int_{SU(N)} [dU]f(U) \propto \int \prod_{A=1}^{N-1} d\varphi_A \, J(\varphi) \, f(\varphi)
+  $
+  \item \textbf{测度密度 (Jacobian)}：
+  \\
+  $
+  J(\varphi) = \prod_{A \neq B} (e^{i\varphi_A} - e^{i\varphi_B}) = \left| \prod_{A<B} (e^{i\varphi_A} - e^{i\varphi_B}) \right|^2
+  $
+  \item \textbf{$N=2$ 特例}：$J(\varphi) \propto \sin^2 \varphi$。积分测度为 $\frac{1}{\pi}\int_0^{2\pi} d\omega \sin^2 \frac{\omega}{2}$（对应角参数化）。
+\end{itemize}
+\section*{Haar 测度与正交归一性}
+\begin{itemize}
+  \item \textbf{Vandermonde 行列式}：Haar 测度的雅可比行列式 $J(\varphi)$ 与 Vandermonde 行列式 $\Delta = \det[e^{i\varphi_A(N-B)}]$ 有关：$J(\varphi) = |\Delta|^2 = \prod_{A<B} |e^{i\varphi_A} - e^{i\varphi_B}|^2$。
+  \item \textbf{$N=2$ 特例}：积分测度为 $\frac{1}{\pi} \int_0^{2\pi} d\omega \sin^2(\frac{\omega}{2})$（若取角参数 $\omega$）。
+  \item \textbf{Schur 函数正交性}：$\int [dU] \chi_Y(U) \overline{\chi_{Y'}(U)} = \frac{1}{N!} \int \prod d\varphi_A J(\varphi) s_Y(\varphi) \overline{s_{Y'}(\varphi)} = \delta_{YY'}$。
+\end{itemize}
+
+\section*{张量积分解 (Littlewood-Richardson 规则)}
+\begin{itemize}
+  \item \textbf{问题}：两不可约表示的张量积通常可约：$\mathcal{R}_Y \otimes \mathcal{R}_{Y'} = \bigoplus_{\tilde{Y}} N_{Y Y'}^{\tilde{Y}} \mathcal{R}_{\tilde{Y}}$。
+  \item \textbf{杨图算法步骤}：
+  \item 1. \textbf{标记}：给 $Y'$ 的第 $i$ 行的所有格子填上数字 $i$。
+  \item 2. \textbf{移动}：将 $Y'$ 的格子按行（第1行、第2行...）依次添加到 $Y$ 上。
+  \item 3. \textbf{规则}：
+    \begin{itemize}
+      \item \textbf{合法性}：每步结果必须是合法的杨图（行不增，左/上对齐）。
+      \item \textbf{列唯一}：同一列中不能出现相同的数字。
+      \item \textbf{逆序读取（Lattice Word）}：从右往左、从上往下读取添加的数字序列，任意时刻读到的数字 $i$ 的个数必须 $\ge$ 数字 $i+1$ 的个数。
+    \end{itemize}
+  \item 4. \textbf{结果}：所有满足规则的最终图形即为分解后的直和项（对应不同的不可约表示）。
+  \item \textbf{例子}：$SU(3)$ 中 $\mathbf{3} \otimes \overline{\mathbf{3}} = \mathbf{1} \oplus \mathbf{8}$（伴随表示）。
+\end{itemize}
+
+\section*{$SU(N)$ 的中心}
+\begin{itemize}
+  \item \textbf{定义}：与群中所有元素对易的元素集合 $C(SU(N)) = \{u \in SU(N) \mid \forall U, uU=Uu\}$。
+  \item \textbf{推导}：由 Schur 引理，基本表示不可约 $\Rightarrow$ 中心元素必须是单位阵的倍数 $u = \lambda \mathbf{1}_{N \times N}$。
+  \item \textbf{约束}：$\det u = \lambda^N = 1 \Rightarrow \lambda = e^{i \frac{2\pi k}{N}}$ ($k=0, 1, \dots, N-1$)。
+  \item \textbf{结论}：$C(SU(N)) \cong \mathbb{Z}_N$（$N$ 阶循环群）。
+\end{itemize}
 \end{multicols*}
 \end{document}
 
